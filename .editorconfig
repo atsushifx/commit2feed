@@ -1,0 +1,24 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+# @(#) : default settings for code of contests
+
+# top-most EditorConfig file
+##
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# default character-set
+charset = utf-8
+
+# default indent style
+indent_style = tab
+indent_size = tab
+tab_width = 4
+
+
+# common file setting
+# ex.) textlintrc, ...
