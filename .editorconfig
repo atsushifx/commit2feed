@@ -29,7 +29,7 @@ indent_size = 2
 tab_width = 2
 
 ### Programming Languages
-[**.js]
+[**.{?js,js}]
 indent_style = space
 indent_size = 2
 tab_width = 2
@@ -52,9 +52,9 @@ tab_width = 2
 ### Settings
 # json, yml
 [**.{json,yml,yaml}]
-tab_width = 4
+indent_style = space
 indent_size = tab
-indent_style = tab
+tab_width = 4
 
 # ini, toml
 [**.{ini,toml}]
