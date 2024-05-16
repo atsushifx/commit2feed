@@ -20,5 +20,62 @@ indent_size = tab
 tab_width = 4
 
 
-# common file setting
-# ex.) textlintrc, ...
+
+### Settings by ext type
+# no ext: general files settings
+[**.]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+### Programming Languages
+[**.js]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+
+### Documents
+# markdown
+[**.md]
+indent_size = tab
+tab_width = 2
+indent_style = space
+
+### Shell Scripts
+# shell script
+[**.{sh,bash,zsh}]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+### Settings
+# json, yml
+[**.{json,yml,yaml}]
+tab_width = 4
+indent_size = tab
+indent_style = tab
+
+# ini, toml
+[**.{ini,toml}]
+indent_style = tab
+indent_size = tab
+tab_width = 4
+
+# rc files
+[**rc]
+indent_style = space
+indent_size = tab
+tab_width = 2
+
+### Git config
+# for git config
+[**.git*]
+indent_style = tab
+indent_size = tab
+tab_width = 4
+
+[**/git/*]
+indent_style = tab
+indent_size = tab
+tab_width = 4
