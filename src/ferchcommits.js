@@ -11,7 +11,6 @@
 //
 // <<
 
-console.log('getApiUrl -- fetchcommits.js')
 /**
  * create gihub commit api from user and repository name
  *
@@ -20,7 +19,14 @@ console.log('getApiUrl -- fetchcommits.js')
  *
  */
 function getApiUrl(user, repo) {
-  return ''
+  if (!user || !repo) return ''
+
+  const user2 = user.trim()
+  const repo2 = repo.trim()
+  if (!user2 || !repo2) return ''
+
+  const apiUrl = `https://api.github.com/repos/${user2}/${repo2}/commits`
+  return apiUrl.toLowerCase()
 }
 
 //
