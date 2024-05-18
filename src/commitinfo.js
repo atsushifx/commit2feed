@@ -57,14 +57,13 @@ class CommitInfo {
   }
 
   getDiff(patch) {
-    const addlines = patch
+    const difflines = patch
       .split('\n')
       .filter(line => line.startsWith('+') && !line.startsWith('+++'))
-      .map(line => line.substring(1).trim())
+      .map(line => line.substring(1))
       .slice(0, this.#LINE_MAX)
       .join('\n')
-      .trim()
-    return addlines
+    return difflines
   }
 
   async fetchCommits(num = 10) {
