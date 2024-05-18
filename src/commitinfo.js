@@ -103,7 +103,7 @@ class CommitInfo {
     }
   }
 
-  async NthCommitDetail(n) {
+  async nthCommitDetail(n) {
     if (isNaN(n)) return await {}
     if (this.#_commits.length < 1) {
       await this.fetchCommits()
