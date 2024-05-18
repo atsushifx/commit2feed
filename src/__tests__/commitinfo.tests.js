@@ -10,26 +10,28 @@
 //
 // <<
 
-import {getApiUrl} from 'ferchcommits'
+import {CommitInfo} from 'commitinfo'
 
 describe('test getApiUrl', () => {
+  const commitInfo = new CommitInfo('  atsushifx  ', 'TIL')
   it('should return the valid api URL: param is url,repo', () => {
     const expectedURL = 'https://api.github.com/repos/atsushifx/til/commits'
-    const actualURL = getApiUrl('  atsushifx  ', 'TIL')
+    const actualURL = commitInfo.getApiUrl()
 
     expect(actualURL).toEqual(expectedURL)
   })
 
   it("shoult return '' if user is null", () => {
-    const apiUrl = getApiUrl('  ', 'TIL')
-    expect(apiUrl).toEqual('')
+    const commitInfo = new CommitInfo('  ', 'TIL')
 
-    const apiUrlRepo = getApiUrl('atsushifx', '')
-    expect(apiUrlRepo).toEqual('')
+    const apiUrl = commitInfo.getApiUrl()
+    expect(apiUrl).toEqual('')
   })
 
   it("shoult return '' if repo is null", () => {
-    const apiUrl = getApiUrl('atsushufx', undefined)
+    const commitInfo = new CommitInfo(' atsushifx ', undefined)
+
+    const apiUrl = commitInfo.getApiUrl()
     expect(apiUrl).toEqual('')
   })
 })
