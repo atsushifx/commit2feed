@@ -21,6 +21,9 @@ class CommitInfo {
   #_user
   #_repo
 
+  /** @var コミット情報 */
+  #_commits = []
+
   /**
    * @constructor
    *
@@ -47,18 +50,20 @@ class CommitInfo {
     return apiUrl.toLowerCase()
   }
 
-  async fetchCommits() {
+  async fetchCommits(numCommits = 10) {
     const apiUrl = this.getApiUrl()
     if (!apiUrl) {
       return []
     }
+    const apiUrlWithNum = `${apiUrl}?per_page=${numCommits}`
 
     try {
-      const response = await fetch(apiUrl)
+      const response = await fetch(apiUrlWithNum)
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
       }
       const commits = await response.json()
+      this.#_commits = commits
       return commits
     } catch (error) {
       console.error('Error fetching commits:', error)
