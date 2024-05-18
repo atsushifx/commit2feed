@@ -103,16 +103,16 @@ class CommitInfo {
     }
   }
 
-  async NthCommitDetail(num) {
-    if (isNaN(num)) {
-      return await {}
+  async NthCommitDetail(n) {
+    if (isNaN(n)) return await {}
+    if (this.#_commits.length < 1) {
+      await this.fetchCommits()
     }
-    console.log(this.#_commits.length)
 
     if (n < 1 || n > this.#_commits.length) {
       return await {}
     }
-    const commitSha = this.#_commits[num - 1].sha // start = 1 , so index = n - 1
+    const commitSha = this.#_commits[n - 1].sha // start = 1 , so index = n - 1
 
     return await this.fetchCommitDetail(commitSha)
   }
