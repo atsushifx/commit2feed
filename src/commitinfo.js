@@ -27,6 +27,8 @@ class CommitInfo {
   /**
    * @constructor
    *
+   * @param user :string github user name
+   * @param repo :string github repository
    */
   constructor(user, repo) {
     this.#_user = ''
@@ -50,26 +52,71 @@ class CommitInfo {
     return apiUrl.toLowerCase()
   }
 
-  async fetchCommits(numCommits = 10) {
+  async fetchCommits(num = 10) {
+    const maxCommitsNum = 100 // max number of fetch commits
+
+    // check parameters
+
+    if (isNaN(num)) return await []
+
+    if (num < 1) return await []
+    if (num > maxCommitsNum) {
+      num = maxCommitsNum
+    }
+
     const apiUrl = this.getApiUrl()
     if (!apiUrl) {
       return []
     }
-    const apiUrlWithNum = `${apiUrl}?per_page=${numCommits}`
+    const apiUrlWithNum = `${apiUrl}?per_page=${num}`
 
     try {
       const response = await fetch(apiUrlWithNum)
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
       }
-      const commits = await response.json()
-      this.#_commits = commits
-      return commits
+      this.#_commits = await response.json()
+      return this.#_commits
     } catch (error) {
       console.error('Error fetching commits:', error)
       return []
     }
   }
+  async fetchCommitDetail(commitSha) {
+    const apiUrl = this.getApiUrl()
+    if (!apiUrl || !commitSha) {
+      return {}
+    }
+
+    const urlWithSha = `${apiUrl}/${commitSha}`
+
+    try {
+      const response = await fetch(urlWithSha)
+      if (!response.ok) {
+        throw new Error(`HTTP error ${response.status}`)
+      }
+      const commitDetails = await response.json()
+      return commitDetails
+    } catch (error) {
+      console.error(`Error fetching commit details for SHA ${commitSha}:`, error)
+      return {}
+    }
+  }
+
+  async NthCommitDetail(num) {
+    if (isNaN(num)) {
+      return await {}
+    }
+    console.log(this.#_commits.length)
+
+    if (n < 1 || n > this.#_commits.length) {
+      return await {}
+    }
+    const commitSha = this.#_commits[num - 1].sha // start = 1 , so index = n - 1
+
+    return await this.fetchCommitDetail(commitSha)
+  }
 }
+
 // exports
 export {CommitInfo}
