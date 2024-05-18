@@ -17,6 +17,10 @@
  * get comit form GitHub repository  given in user, repo
  */
 class CommitInfo {
+  // constants
+  #MAX_COMMITS = 100
+  #LINE_MAX = 12
+
   // field
   #_user
   #_repo
@@ -53,17 +57,14 @@ class CommitInfo {
   }
 
   async fetchCommits(num = 10) {
-    const maxCommitsNum = 100 // max number of fetch commits
-
     // check parameters
 
     if (isNaN(num)) return await []
 
     if (num < 1) return await []
-    if (num > maxCommitsNum) {
-      num = maxCommitsNum
+    if (num > this.#MAX_COMMITS) {
+      num = this.#MAX_COMMITS
     }
-
     const apiUrl = this.getApiUrl()
     if (!apiUrl) {
       return []
@@ -96,6 +97,15 @@ class CommitInfo {
         throw new Error(`HTTP error ${response.status}`)
       }
       const commitDetails = await response.json()
+      // 新規追加部分を抜き出し ()
+      const addLines = commitDetails.files[0].patch
+        .split('\n')
+        .filter(l => (l.startsWith('+') || l.startsWith(' ')) && !l.startsWith('+++'))
+        .map(line => line.substring(1).trim())
+        .slice(0, this.#LINE_MAX)
+        .join('\n')
+      console.log(addLines)
+      commitDetails.files[0].addlines = addLines
       return commitDetails
     } catch (error) {
       console.error(`Error fetching commit details for SHA ${commitSha}:`, error)
