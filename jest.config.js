@@ -12,17 +12,13 @@
 
 'use strict'
 
-module.exports = {
-  roots: ['./src'],
-  testMatch: ['**/__tests__/**/*.js?(x)'],
-  testPathIgnorePatterns: ['/node_modules/'],
-  // for Jest configuration
+export default {
+  rootDir: 'src',
+  //
+  testMatch: ['**/__tests__/*.js'],
   testEnvironment: 'node',
-  moduleDirectories: ['node_modules', 'src'],
+  //
   transform: {
-    '^.+\\.[t|j]sx?$': 'babel-jest'
-  },
-  moduleNameMapper: {
-    '^src/(.*)$': './src/$1'
+    
   }
 }

@@ -10,7 +10,7 @@
 //
 // <<
 
-import {CommitInfo} from 'commitinfo'
+import {CommitInfo} from '../commitinfo'
 
 describe('test getApiUrl', () => {
   const commitInfo = new CommitInfo('  atsushifx  ', 'TIL')

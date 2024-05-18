@@ -47,11 +47,12 @@ class CommitInfo {
     return apiUrl.toLowerCase()
   }
 
-  async fetchCommits(user, repo) {
-    const apiUrl = getApiUrl(user, repo)
+  async fetchCommits() {
+    const apiUrl = this.getApiUrl()
     if (!apiUrl) {
       return []
     }
+
     try {
       const response = await fetch(apiUrl)
       if (!response.ok) {
@@ -65,6 +66,5 @@ class CommitInfo {
     }
   }
 }
-
 // exports
 export {CommitInfo}
