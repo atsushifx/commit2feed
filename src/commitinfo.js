@@ -52,8 +52,19 @@ class CommitInfo {
   getApiUrl() {
     if (!this.#_user || !this.#_repo) return ''
 
-    const apiUrl = `https://api.github.com/repos/${this.#_user}/${this.#_repo}/commits`
-    return apiUrl.toLowerCase()
+    const apiUrl = `https://api.github.com/repos/${this.#_user}/${this.#_repo}/commits`.toLowerCase()
+    return apiUrl
+  }
+
+  getDiff(patch) {
+    const addlines = patch
+      .split('\n')
+      .filter(line => line.startsWith('+') && !line.startsWith('+++'))
+      .map(line => line.substring(1).trim())
+      .slice(0, this.#LINE_MAX)
+      .join('\n')
+      .trim()
+    return addlines
   }
 
   async fetchCommits(num = 10) {
@@ -86,7 +97,7 @@ class CommitInfo {
   async fetchCommitDetail(commitSha) {
     const apiUrl = this.getApiUrl()
     if (!apiUrl || !commitSha) {
-      return {}
+      return undefined
     }
 
     const urlWithSha = `${apiUrl}/${commitSha}`
@@ -96,34 +107,29 @@ class CommitInfo {
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
       }
-      const commitDetails = await response.json()
-      // 新規追加部分を抜き出し ()
-      const addLines = commitDetails.files[0].patch
-        .split('\n')
-        .filter(l => (l.startsWith('+') || l.startsWith(' ')) && !l.startsWith('+++'))
-        .map(line => line.substring(1).trim())
-        .slice(0, this.#LINE_MAX)
-        .join('\n')
-      console.log(addLines)
-      commitDetails.files[0].addlines = addLines
-      return commitDetails
+      const commitDetail = await response.json()
+
+      // diff作成
+      for (let i = 0; i < commitDetail.files.length; i++) {
+        commitDetail.files[i].diff = this.getDiff(commitDetail.files[i].patch)
+      }
+      return commitDetail
     } catch (error) {
       console.error(`Error fetching commit details for SHA ${commitSha}:`, error)
-      return {}
+      return undefined
     }
   }
 
   async nthCommitDetail(n) {
-    if (isNaN(n)) return await {}
+    if (isNaN(n)) return await undefined
     if (this.#_commits.length < 1) {
       await this.fetchCommits()
     }
 
-    if (n < 1 || n > this.#_commits.length) {
-      return await {}
+    if (n < 0 || n >= this.#_commits.length) {
+      return await undefined
     }
-    const commitSha = this.#_commits[n - 1].sha // start = 1 , so index = n - 1
-
+    const commitSha = this.#_commits[n].sha
     return await this.fetchCommitDetail(commitSha)
   }
 }
