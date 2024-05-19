@@ -27,6 +27,9 @@ class Commit2Feed {
   /** @var CommitInfo */
   _commitInfo
 
+  /** @var fetched commit detail */
+  _commitDetails
+
   /** @var feed  */
   _feed
 
@@ -45,6 +48,7 @@ class Commit2Feed {
       this.#_commitNum = num
     }
     this._commitInfo = new CommitInfo(user, repo)
+    this._commitDetails = null
     this._feed = null
   }
 
@@ -66,6 +70,32 @@ class Commit2Feed {
         link: this._commitInfo.getOwnerUrl()
       }
     })
+  }
+
+  /**
+   * generate feed item by every commit
+   */
+  async generateFeedItems() {
+    // fetch commit details
+    if (!this._commitDetails) {
+      const details = await this._commitInfo.fetchCommitDetails(this.#_commitNum)
+      if (!details) return
+
+      this._commitDetails = details
+    }
+
+    const feedItems = this._commitDetails.map(commit => ({
+      title: commit.commit.message,
+      id: commit.sha,
+      link: commit.html_url,
+      author: {
+        name: commit.commit.author.name,
+        email: commit.commit.author.email,
+        link: commit.author.html_url
+      },
+      date: new Date(commit.commit.author.date)
+    }))
+    this._feed.items = feedItems
   }
 
   /**

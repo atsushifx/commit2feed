@@ -146,7 +146,7 @@ class CommitInfo {
     }
   }
   async #fetchDetail(commitSha) {
-    const apiUrl = this.getApiUrl() + '/commits'
+    const apiUrl = this.getRepositoryUrl() + '/commits'
     if (!apiUrl || !commitSha) {
       return await false
     }
