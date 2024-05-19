@@ -18,7 +18,5 @@ export default {
   testMatch: ['**/__tests__/*.js'],
   testEnvironment: 'node',
   //
-  transform: {
-    
-  }
+  transform: {}
 }

@@ -13,7 +13,7 @@
 
 'use strict'
 
-module.exports = {
+export default {
   plugins: ['plugins/markdown'],
   source: {
     include: ['src'],

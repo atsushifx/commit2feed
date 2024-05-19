@@ -5,11 +5,10 @@ export default [
   js.configs.recommended,
   {
     languageOptions: {
-      ecmaVersion: latest,
       globals: globals.browser
     },
     rules: {
-      semi: 'error'
+      semi: 'off'
     }
   }
 ]

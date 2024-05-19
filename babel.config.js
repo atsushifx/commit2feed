@@ -21,5 +21,5 @@ export default {
       }
     ]
   ],
-  ignore: ['**/__tests__/**'] 
+  ignore: ['**/__tests__/**']
 }
