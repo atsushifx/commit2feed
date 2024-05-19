@@ -56,7 +56,15 @@ class Commit2Feed {
     if (!commits) return
     //
     this._feed = new Feed({
-      title: this._commitInfo.getRepository()
+      title: this._commitInfo.getRepository(),
+      description: `Latest ${this.#_commitNum} commits for ${this._commitInfo.getRepository()}`,
+      id: `${this._commitInfo.getRepositoryUrl()}/commits/latest`,
+      link: `${this._commitInfo.getRepositoryUrl()}/commits/latest`,
+      updated: new Date(this._commitInfo.getLatesCommitDate()),
+      author: {
+        name: this._commitInfo.getOwner(),
+        link: this._commitInfo.getOwnerUrl()
+      }
     })
   }
 
@@ -64,7 +72,7 @@ class Commit2Feed {
    * generate feed
    */
   feed() {
-    return 'feeds'
+    return this._feed.atom1()
   }
 }
 

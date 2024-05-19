@@ -55,6 +55,31 @@ class CommitInfo {
   }
 
   /**
+   *  get Repository Owner
+   */
+  getOwner() {
+    return this.#_user
+  }
+
+  /**
+   * get github's owner url
+   */
+  getOwnerUrl() {
+    return 'https://github.com/{$this.#_user}'
+  }
+
+  /**
+   * get newest commit's date
+   */
+  getLatesCommitDate() {
+    if (this._commits.length <= 0) {
+      return null
+    }
+
+    return this._commits[0].commit.committer.date
+  }
+
+  /**
    * create gihub commit api from user and repository name
    *
    */
