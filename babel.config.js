@@ -17,7 +17,11 @@ export default {
     [
       '@babel/preset-env',
       {
-        modules: false
+        modules: false,
+        targets: {
+          esmodules: true
+        },
+        exclude: ['transform-arrow-functions', 'transform-classes', 'transform-template-literals']
       }
     ]
   ],
