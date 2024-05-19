@@ -93,6 +93,7 @@ class Commit2Feed {
         email: commit.commit.author.email,
         link: commit.author.html_url
       },
+      content: commit.files.diff,
       date: new Date(commit.commit.author.date)
     }))
     this._feed.items = feedItems
@@ -101,7 +102,10 @@ class Commit2Feed {
   /**
    * generate feed
    */
-  feed() {
+  async feed() {
+    await this.initFeed()
+    await this.generateFeedItems()
+
     return this._feed.atom1()
   }
 }
