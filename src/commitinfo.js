@@ -66,6 +66,22 @@ class CommitInfo {
     return difflines
   }
 
+  getCommitDiff(commit) {
+    if (!commit) return ''
+
+    const commitDiff = []
+
+    for (let i = 0; i < commit.files.length; i++) {
+      if (i > 0) commitDiff.push('------')
+      commitDiff.push(commit.files[i].filename + '\n')
+      const diff = commit.files[i].diff.split('\n')
+      commitDiff.push(...diff)
+      if (commitDiff.length > this.#LINE_MAX) break
+    }
+
+    return commitDiff.join('\n')
+  }
+
   async fetchCommits(num = 10) {
     // check parameters
 
@@ -112,6 +128,7 @@ class CommitInfo {
       for (let i = 0; i < commitDetail.files.length; i++) {
         commitDetail.files[i].diff = this.getDiff(commitDetail.files[i].patch)
       }
+      commitDetail.files.diff = this.getCommitDiff(commitDetail)
       return commitDetail
     } catch (error) {
       console.error(`Error fetching commit details for SHA ${commitSha}:`, error)
