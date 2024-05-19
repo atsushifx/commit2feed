@@ -19,7 +19,7 @@
 class CommitInfo {
   // constants
   #MAX_COMMITS = 100
-  #LINE_MAX = 12
+  #DIFF_LINE_MAX = 12
 
   // field
   #_user
@@ -61,7 +61,7 @@ class CommitInfo {
       .split('\n')
       .filter(line => line.startsWith('+') && !line.startsWith('+++'))
       .map(line => line.substring(1))
-      .slice(0, this.#LINE_MAX)
+      .slice(0, this.#DIFF_LINE_MAX)
       .join('\n')
     return difflines
   }
@@ -76,7 +76,7 @@ class CommitInfo {
       commitDiff.push(commit.files[i].filename + '\n')
       const diff = commit.files[i].diff.split('\n')
       commitDiff.push(...diff)
-      if (commitDiff.length > this.#LINE_MAX) break
+      if (commitDiff.length > this.#DIFF_LINE_MAX) break
     }
 
     return commitDiff.join('\n')
@@ -112,7 +112,7 @@ class CommitInfo {
   async fetchCommitDetail(commitSha) {
     const apiUrl = this.getApiUrl()
     if (!apiUrl || !commitSha) {
-      return undefined
+      return await false
     }
 
     const urlWithSha = `${apiUrl}/${commitSha}`
@@ -132,21 +132,39 @@ class CommitInfo {
       return commitDetail
     } catch (error) {
       console.error(`Error fetching commit details for SHA ${commitSha}:`, error)
-      return undefined
+      return false
     }
   }
 
   async nthCommitDetail(n) {
-    if (isNaN(n)) return await undefined
+    if (isNaN(n)) return await false
     if (this.#_commits.length < 1) {
       await this.fetchCommits()
     }
 
     if (n < 0 || n >= this.#_commits.length) {
-      return await undefined
+      return await false
     }
     const commitSha = this.#_commits[n].sha
     return await this.fetchCommitDetail(commitSha)
+  }
+
+  async fetchCommitDiffs(commitNum = 5) {
+    if (isNaN(commitNum)) return await false
+    if (commitNum < 1) return await false
+    if (commitNum > this.#MAX_COMMITS) {
+      commitNum = this.#MAX_COMMITS
+    }
+
+    const commits = await this.fetchCommits(commitNum)
+    if (!commits) return await false
+
+    const commitsDiff = []
+    for (let i = 0; i < commits.length; i++) {
+      const detail = await this.nthCommitDetail(i)
+      commitsDiff.push(detail)
+    }
+    return commitsDiff
   }
 }
 
