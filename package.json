@@ -39,5 +39,8 @@
   "lint-staged": {
     "src/*.js": "pnpx eslint --fix",
     "**.js*": "pnpx prettier --write"
+  },
+  "dependencies": {
+    "feed": "^4.2.2"
   }
 }
