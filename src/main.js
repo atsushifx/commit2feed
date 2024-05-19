@@ -1,9 +1,8 @@
 //
-import {CommitInfo} from './commitinfo.js'
+import {Commit2Feed} from './commit2feed.js'
 
 // メインルーチン
-const commitInfo = new CommitInfo('atsushifx', 'commits2feeds')
-const commits = await commitInfo.fetchCommitDetails()
+const c2f = new Commit2Feed('atsushifx', 'commit2feed')
+await c2f.initFeed()
 
-console.log(commitInfo.getRepository() + '\n\n')
-console.log(commits[0])
+console.log(c2f.feed())

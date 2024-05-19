@@ -1,4 +1,4 @@
-// @(#) fetch_commit : ferch commit form GitHub repository
+// @(#) CommitInfo : ferch commit info form GitHub repository
 //
 //
 // @version   0.1.0
@@ -66,6 +66,8 @@ class CommitInfo {
   }
 
   getDiff(patch) {
+    if (!patch) return ''
+
     const difflines = patch
       .split('\n')
       .filter(line => line.startsWith('+') && !line.startsWith('+++'))
@@ -171,6 +173,7 @@ class CommitInfo {
     const commitsDiff = []
     for (let i = 0; i < commits.length; i++) {
       const detail = await this.nthDetail(i)
+      if (!detail) break
       commitsDiff.push(detail)
     }
     return commitsDiff

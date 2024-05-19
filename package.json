@@ -7,7 +7,7 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "prepare": "pnpx husky init",
+    "prepare": "husky",
     "compile": "pnpm exec babel src --out-dir dist",
     "builddoc": "pnpx jsdoc -c ./jsdoc.config.js src",
     "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" pnpx jest",
