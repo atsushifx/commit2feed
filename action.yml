@@ -1,0 +1,15 @@
+name: 'Generate Repository Feed' # アクション名
+description: 'Generate an Atom feed from the commits of a GitHub repository' # 説明
+inputs: # 入力パラメーター
+  user:
+    description: 'GitHub username'
+    required: true
+  repo:
+    description: 'Repository name'
+    required: true
+outputs: # 出力
+  feed:
+    description: 'The generated Atom feed'
+runs: # アクションの実行方法
+  using: 'node20' # Node.js 16.xを使う
+  main: 'dist/main.js' # メインスクリプトのパス
