@@ -12,11 +12,11 @@
 
 import {CommitInfo} from '../commitinfo'
 
-describe('test getApiUrl', () => {
+describe('test getRepositoryUrl', () => {
   const commitInfo = new CommitInfo('  atsushifx  ', 'TIL')
   it('should return the valid api URL: param is url,repo', () => {
-    const expectedURL = 'https://api.github.com/repos/atsushifx/til/commits'
-    const actualURL = commitInfo.getApiUrl()
+    const expectedURL = 'https://api.github.com/repos/atsushifx/til'
+    const actualURL = commitInfo.getRepositoryUrl()
 
     expect(actualURL).toEqual(expectedURL)
   })
@@ -24,14 +24,14 @@ describe('test getApiUrl', () => {
   it("shoult return '' if user is null", () => {
     const commitInfo = new CommitInfo('  ', 'TIL')
 
-    const apiUrl = commitInfo.getApiUrl()
+    const apiUrl = commitInfo.getRepositoryUrl()
     expect(apiUrl).toEqual('')
   })
 
   it("shoult return '' if repo is null", () => {
     const commitInfo = new CommitInfo(' atsushifx ', undefined)
 
-    const apiUrl = commitInfo.getApiUrl()
+    const apiUrl = commitInfo.getRepositoryUrl()
     expect(apiUrl).toEqual('')
   })
 })

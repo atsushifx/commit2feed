@@ -58,11 +58,11 @@ class CommitInfo {
    * create gihub commit api from user and repository name
    *
    */
-  getApiUrl() {
+  getRepositoryUrl() {
     if (!this.#_user || !this.#_repo) return ''
 
-    const apiUrl = `https://api.github.com/repos/${this.#_user}/${this.#_repo}/commits`.toLowerCase()
-    return apiUrl
+    const repoUrl = `https://api.github.com/repos/${this.#_user}/${this.#_repo}`
+    return repoUrl.toLowerCase()
   }
 
   getDiff(patch) {
@@ -102,7 +102,7 @@ class CommitInfo {
     if (num > this.#MAX_COMMITS) {
       num = this.#MAX_COMMITS
     }
-    const apiUrl = this.getApiUrl()
+    const apiUrl = this.getRepositoryUrl() + '/commits'
     if (!apiUrl) {
       return []
     }
@@ -121,7 +121,7 @@ class CommitInfo {
     }
   }
   async #fetchDetail(commitSha) {
-    const apiUrl = this.getApiUrl()
+    const apiUrl = this.getApiUrl() + '/commits'
     if (!apiUrl || !commitSha) {
       return await false
     }
