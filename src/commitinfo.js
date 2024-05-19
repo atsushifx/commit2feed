@@ -65,7 +65,7 @@ class CommitInfo {
    * get github's owner url
    */
   getOwnerUrl() {
-    return 'https://github.com/{$this.#_user}'
+    return `https://github.com/${this.#_user}`
   }
 
   /**
