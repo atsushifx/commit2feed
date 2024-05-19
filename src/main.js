@@ -13,7 +13,7 @@
 
 // modules
 import * as core from '@actions/core'
-import {Commit2Feed} from 'commit2feed'
+import {Commit2Feed} from './commit2feed.js'
 
 // main routine
 //const c2f = new Commit2Feed('atsushifx', 'commit2feed')
