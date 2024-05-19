@@ -26,7 +26,7 @@ class CommitInfo {
   #_repo
 
   /** @var コミット情報 */
-  #_commits = []
+  _commits
 
   /**
    * @constructor
@@ -37,12 +37,21 @@ class CommitInfo {
   constructor(user, repo) {
     this.#_user = ''
     this.#_repo = ''
+    this._commits = []
+
     if (user) {
       this.#_user = user.trim()
     }
     if (repo) {
       this.#_repo = repo.trim()
     }
+  }
+
+  /**
+   * get Repository name
+   */
+  getRepository() {
+    return `${this.#_user} / ${this.#_repo}`
   }
 
   /**
@@ -102,14 +111,14 @@ class CommitInfo {
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
       }
-      this.#_commits = await response.json()
-      return this.#_commits
+      this._commits = await response.json()
+      return this._commits
     } catch (error) {
       console.error('Error fetching commits:', error)
       return []
     }
   }
-  async fetchCommitDetail(commitSha) {
+  async #fetchDetail(commitSha) {
     const apiUrl = this.getApiUrl()
     if (!apiUrl || !commitSha) {
       return await false
@@ -136,20 +145,20 @@ class CommitInfo {
     }
   }
 
-  async nthCommitDetail(n) {
+  async nthDetail(n) {
     if (isNaN(n)) return await false
-    if (this.#_commits.length < 1) {
+    if (this._commits.length < 1) {
       await this.fetchCommits()
     }
 
-    if (n < 0 || n >= this.#_commits.length) {
+    if (n < 0 || n >= this._commits.length) {
       return await false
     }
-    const commitSha = this.#_commits[n].sha
-    return await this.fetchCommitDetail(commitSha)
+    const commitSha = this._commits[n].sha
+    return await this.#fetchDetail(commitSha)
   }
 
-  async fetchCommitDiffs(commitNum = 5) {
+  async fetchCommitDetails(commitNum = 5) {
     if (isNaN(commitNum)) return await false
     if (commitNum < 1) return await false
     if (commitNum > this.#MAX_COMMITS) {
@@ -161,7 +170,7 @@ class CommitInfo {
 
     const commitsDiff = []
     for (let i = 0; i < commits.length; i++) {
-      const detail = await this.nthCommitDetail(i)
+      const detail = await this.nthDetail(i)
       commitsDiff.push(detail)
     }
     return commitsDiff
