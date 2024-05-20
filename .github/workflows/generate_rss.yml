@@ -1,0 +1,22 @@
+name: Generate RSS Feed
+
+on:push:
+  branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  generate-feed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate Feed
+        uses: atsushifx/commit2feed@main
+        with:
+          user: 'atsushifx'
+          repo: 'commit2feed'
+
+      - name: Output Feed
+        run: echo "${{ steps.generate-feed.outputs.feed }}"
