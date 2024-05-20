@@ -21,7 +21,7 @@ async function run() {
     const user = core.getInput('user', {required: true})
     const repo = core.getInput('repo', {required: true})
     const c2f = new Commit2Feed(user, repo)
-    const rssfeeds = c2f.feeds()
+    const rssfeeds = await c2f.feeds()
 
     //
     core.setOutput(`feed`, rssfeeds)
