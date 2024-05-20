@@ -23,7 +23,9 @@ jobs:
       - name: Save Feed
         run: |
           mkdir -p rss
-          echo `${{ steps.generate-feed.outputs.feed }}` > rss/feeds.xml
+          cat <<EOF > rss/feeds.xml
+          ${{ steps.generate-feed.outputs.feed }}
+          EOF
 
       - name: Commit Feed
         run: |

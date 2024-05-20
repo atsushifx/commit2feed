@@ -18,8 +18,7 @@ import {Commit2Feed} from './commit2feed.js'
 // main routine
 
 // for debug feeds
-const rssfeeds = `
-<?xml version="1.0" encoding="utf-8"?>
+const rssfeeds = `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
     <title>atsushifx / commit2feed</title>
