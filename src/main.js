@@ -16,7 +16,13 @@ import * as core from '@actions/core'
 import {Commit2Feed} from './commit2feed.js'
 
 // main routine
-async function run() {
+/**
+ * main : GitHub Action main routine
+ *
+ * generate RSS atom feed from commit.
+ * then set RSS feed to github repository
+ */
+async function main() {
   try {
     const user = core.getInput('user', {required: true})
     const repo = core.getInput('repo', {required: true})
@@ -31,4 +37,5 @@ async function run() {
   }
 }
 
-run()
+//
+main()

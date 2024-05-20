@@ -12,27 +12,29 @@
 // <<
 
 /**
- * class: CommitInfo
+ * @class
  *
- * get comit form GitHub repository  given in user, repo
+ * get comimt form GitHub repository given in user, repo
  */
 class CommitInfo {
   // constants
   #MAX_COMMITS = 100
   #DIFF_LINE_MAX = 12
 
-  // field
+  // private
   #_user
   #_repo
 
-  /** @var コミット情報 */
+  /**
+   * @property Commits Commit information
+   */
   _commits
 
   /**
    * @constructor
    *
-   * @param user :string github user name
-   * @param repo :string github repository
+   * @param user string github user name
+   * @param repo string github repository
    */
   constructor(user, repo) {
     this.#_user = ''
@@ -49,6 +51,8 @@ class CommitInfo {
 
   /**
    * get Repository name
+   *
+   * @returns string github repository title
    */
   getRepository() {
     return `${this.#_user} / ${this.#_repo}`
@@ -56,6 +60,8 @@ class CommitInfo {
 
   /**
    *  get Repository Owner
+   *
+   * @returns string github repository owner
    */
   getOwner() {
     return this.#_user
@@ -63,6 +69,8 @@ class CommitInfo {
 
   /**
    * get github's owner url
+   *
+   * @returns string repository owner's github page URL
    */
   getOwnerUrl() {
     return `https://github.com/${this.#_user}`
@@ -70,6 +78,8 @@ class CommitInfo {
 
   /**
    * get newest commit's date
+   *
+   * @returns string commit's date
    */
   getLatesCommitDate() {
     if (this._commits.length <= 0) {
@@ -80,8 +90,9 @@ class CommitInfo {
   }
 
   /**
-   * create gihub commit api from user and repository name
+   * get github api's url
    *
+   * @returns string github api's URL
    */
   getRepositoryUrl() {
     if (!this.#_user || !this.#_repo) return ''
@@ -90,6 +101,12 @@ class CommitInfo {
     return repoUrl.toLowerCase()
   }
 
+  /**
+   * generate new code fron patch
+   *
+   * @param string patch commit diff by patch type string
+   * @returns array of commits
+   */
   getDiff(patch) {
     if (!patch) return ''
 
@@ -102,6 +119,12 @@ class CommitInfo {
     return difflines
   }
 
+  /**
+   * create diff from very files patch
+   *
+   * @param {*} commit
+   * @returns string commit diff string
+   */
   getCommitDiff(commit) {
     if (!commit) return ''
 
@@ -118,6 +141,13 @@ class CommitInfo {
     return commitDiff.join('\n')
   }
 
+  /**
+   * fetch commit from github repository
+   *
+   * @param (optional) number fetch commits' number
+   * @returns [] commit list
+   *
+   */
   async fetchCommits(num = 10) {
     // check parameters
 
@@ -145,6 +175,13 @@ class CommitInfo {
       return []
     }
   }
+
+  /**
+   * fetch commit's detail from repository
+   *
+   * @param {*} commitSha
+   * @returns commit detail : false/cannot fetch
+   */
   async #fetchDetail(commitSha) {
     const apiUrl = this.getRepositoryUrl() + '/commits'
     if (!apiUrl || !commitSha) {
@@ -172,6 +209,12 @@ class CommitInfo {
     }
   }
 
+  /**
+   * fetch n'th commit details
+   *
+   * @param number n number of commits (0:latest)
+   * @returns object Commit Detail
+   */
   async nthDetail(n) {
     if (isNaN(n)) return await false
     if (this._commits.length < 1) {
@@ -184,6 +227,13 @@ class CommitInfo {
     const commitSha = this._commits[n].sha
     return await this.#fetchDetail(commitSha)
   }
+
+  /**
+   * fetch commit details from repositry
+   *
+   * @param (optional)number getch commit details' number
+   * @returns array Commit Details list
+   */
 
   async fetchCommitDetails(commitNum = 5) {
     if (isNaN(commitNum)) return await false

@@ -15,31 +15,44 @@ import {Feed} from 'feed'
 import {CommitInfo} from './commitinfo.js'
 
 /**
- * Commit2Feed: generate RSS feed from github commits
+ *
+ * generate RSS feed from github commits
+ * @class
  */
 class Commit2Feed {
-  // CONSTANTS
+  // private CONSTANTS
   #DEFAULT_COMMITS_NUM = 10
 
   #MAX_COMMITS_NUM = 100
 
-  // public fiedls
-  /** @var CommitInfo */
+  // public propertiies
+  /**
+   * @property CommitInfo Commit Info about getting commits
+   */
   _commitInfo
 
-  /** @var fetched commit detail */
+  /**
+   * @property CommitDetail Commit Detail Info about every getting commits
+   */
   _commitDetails
 
-  /** @var feed  */
+  /**
+   * @property Feed  simple RSS Feed generated
+   */
   _feed
 
   // private fields
   #_commitNum
 
   /**
-   * @construct
+   * set github repository for fetch commits
+   *
+   * @constructor
+   * @param string user github user
+   * @param string repo repository name
+   * @param (optional) number num RSS feed entriies number
    */
-  constructor(user, repo, num = 10) {
+  constructor(user, repo, num = 5) {
     if (isNaN(num)) {
       this.#_commitNum = this.#DEFAULT_COMMITS_NUM
     } else if (num < 1 || num > this.#MAX_COMMITS_NUM) {
@@ -53,7 +66,10 @@ class Commit2Feed {
   }
 
   /**
-   * feed初期化
+   * initializes Feed
+   *
+   * set RSS Feed header fro github commit
+   *
    */
   async initFeed() {
     const commits = await this._commitInfo.fetchCommitDetails(this.#_commitNum)
@@ -65,6 +81,7 @@ class Commit2Feed {
       id: `${this._commitInfo.getRepositoryUrl()}/commits/latest`,
       link: `${this._commitInfo.getRepositoryUrl()}/commits/latest`,
       updated: new Date(this._commitInfo.getLatesCommitDate()),
+      generator: 'htttps://github.com/atsushifx/commit2feed',
       author: {
         name: this._commitInfo.getOwner(),
         link: this._commitInfo.getOwnerUrl()
@@ -73,7 +90,11 @@ class Commit2Feed {
   }
 
   /**
-   * generate feed item by every commit
+   * generate feed entries by every commit
+   *
+   * generate feed entries by every commit,
+   * and set all entries to Feed to create RSS feed
+   *
    */
   async generateFeedItems() {
     // fetch commit details
@@ -100,7 +121,12 @@ class Commit2Feed {
   }
 
   /**
-   * generate feed
+   * get RSS feed
+   *
+   * initialize Feed, create entries
+   * and return RSS feeds
+   *
+   * @returns string generated RSS feeds
    */
   async feeds() {
     await this.initFeed()
