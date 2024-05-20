@@ -29,6 +29,6 @@ jobs:
         run: |
           git config --global user.email "ACTION@github.com"
           git config --global user.name "GitHub Action"
-          git add rss/feed.xml
+          git add rss/feeds.xml
           git commit -m "Update RSS feed"
           git push
