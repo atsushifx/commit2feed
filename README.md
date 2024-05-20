@@ -1,9 +1,6 @@
-<!-- markdownlint-disable no-inline-html -->
 <head>
   <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="rss/feeds.xml">
 </head>
-# readme
-<!--markdownlint enable -->
 
 # Read Me
 
@@ -13,9 +10,7 @@
 
 ## main
 
-this is my projects's template.
-create base file:
+commit2feed is a Custom GitHub Action for generate RSS feed.
+this action fetch commits from github reposutory and
+convert patch to diff every comitted files, then generate RSS feed.
 
-- LICENSE
-- .gitignore
-- .editorconfig
