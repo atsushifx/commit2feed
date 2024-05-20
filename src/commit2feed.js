@@ -102,7 +102,7 @@ class Commit2Feed {
   /**
    * generate feed
    */
-  async feed() {
+  async feeds() {
     await this.initFeed()
     await this.generateFeedItems()
 
