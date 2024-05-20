@@ -1,1 +1,172 @@
-{}
+\<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
+    <title>atsushifx / commit2feed</title>
+    <updated>2024-05-20T09:07:02.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>atsushifx</name>
+        <uri>https://github.com/atsushifx</uri>
+    </author>
+    <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
+    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Merge pull request #4 from atsushifx/develop
+
+fix: save feedsのhere documentのbugfix]]></title>
+        <id>8157be8cc2245a9c5e0b3561b0d9c94a07b081bb</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/8157be8cc2245a9c5e0b3561b0d9c94a07b081bb"/>
+        <updated>2024-05-20T09:07:02.000Z</updated>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+          cat <<'EOF' > rss/feeds.xml
+          \${{ steps.generate-feed.outputs.feed }}]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[fix: save feedsのhere documentのbugfix]]></title>
+        <id>920800304fc73be0433621b88d85c2eac958bdfc</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/920800304fc73be0433621b88d85c2eac958bdfc"/>
+        <updated>2024-05-20T09:01:18.000Z</updated>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+          cat <<'EOF' > rss/feeds.xml
+          \${{ steps.generate-feed.outputs.feed }}]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Merge pull request #3 from atsushifx/develop
+
+fix: await付け忘れ]]></title>
+        <id>e0b1aa91eb6ee05807e369e1c1d35d2f350cf0dc</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/e0b1aa91eb6ee05807e369e1c1d35d2f350cf0dc"/>
+        <updated>2024-05-20T08:55:48.000Z</updated>
+        <content type="html"><![CDATA[release/index.js
+
+
+------
+src/main.js
+
+    const rssfeeds = await c2f.feeds()]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[fix: await付け忘れ]]></title>
+        <id>3f8ceccafd88ba176b70d3e8dda6a30440c2533d</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/3f8ceccafd88ba176b70d3e8dda6a30440c2533d"/>
+        <updated>2024-05-20T08:50:57.000Z</updated>
+        <content type="html"><![CDATA[release/index.js
+
+
+------
+src/main.js
+
+    const rssfeeds = await c2f.feeds()]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Update RSS feed]]></title>
+        <id>7a29a2ab2b3a576d94be17e893fb74f5d8c35b21</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/7a29a2ab2b3a576d94be17e893fb74f5d8c35b21"/>
+        <updated>2024-05-20T08:49:41.000Z</updated>
+        <content type="html"><![CDATA[rss/feeds.xml
+
+{}]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Merge pull request #2 from atsushifx/develop
+
+update: debug用から、releaseビルドに]]></title>
+        <id>a8c47192d862e598644a61a57d72f3ef8fdae0a5</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/a8c47192d862e598644a61a57d72f3ef8fdae0a5"/>
+        <updated>2024-05-20T08:49:29.000Z</updated>
+        <content type="html"><![CDATA[release/index.js
+
+
+------
+src/commit2feed.js
+
+  async feeds() {
+------
+src/main.js
+
+    const rssfeeds = c2f.feeds()
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: debug用から、releaseビルドに]]></title>
+        <id>9b795b3992687b3cf2cea532bf7137f33c57ecaa</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/9b795b3992687b3cf2cea532bf7137f33c57ecaa"/>
+        <updated>2024-05-20T08:44:10.000Z</updated>
+        <content type="html"><![CDATA[release/index.js
+
+
+------
+src/commit2feed.js
+
+  async feeds() {
+------
+src/main.js
+
+    const rssfeeds = c2f.feeds()
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Merge pull request #1 from atsushifx/develop
+
+update: README.mdにRSSフィードを追加]]></title>
+        <id>48e13a6793005bde974a29ea988ecb46a5526b7c</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/48e13a6793005bde974a29ea988ecb46a5526b7c"/>
+        <updated>2024-05-20T08:42:36.000Z</updated>
+        <content type="html"><![CDATA[README.md
+
+<!-- markdownlint-disable no-inline-html -->
+<head>
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="rss/feeds.xml">
+</head>
+<!--markdownlint enable -->
+
+# Read Me
+
+## RSS Feed
+
+[RSS Feed](rss/feeds.xml)
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: README.mdにRSSフィードを追加]]></title>
+        <id>518df2cd448f1f6952babc8f24d33e5f1e476cb1</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/518df2cd448f1f6952babc8f24d33e5f1e476cb1"/>
+        <updated>2024-05-20T08:36:00.000Z</updated>
+        <content type="html"><![CDATA[README.md
+
+<!-- markdownlint-disable no-inline-html -->
+<head>
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="rss/feeds.xml">
+</head>
+<!--markdownlint enable -->
+
+# Read Me
+
+## RSS Feed
+
+[RSS Feed](rss/feeds.xml)
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Update RSS feed]]></title>
+        <id>31600ac7e746d938cc3d970a3041690fa76cfe57</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/31600ac7e746d938cc3d970a3041690fa76cfe57"/>
+        <updated>2024-05-20T08:18:20.000Z</updated>
+        <content type="html"><![CDATA[rss/feeds.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
+    <title>atsushifx / commit2feed</title>
+    <updated>1970-01-01T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>atsushifx</name>
+        <uri>https://github.com/atsushifx</uri>
+    </author>
+    <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
+    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>]]></content>
+    </entry>
+</feed>
