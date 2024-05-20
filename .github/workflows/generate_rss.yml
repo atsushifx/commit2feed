@@ -24,10 +24,10 @@ jobs:
           mkdir -p rss
           echo '${{ steps.generate-feed.outputs.feed }}' > rss/feed.xml
 
-     - name: Commit Feed
-      run: |
-        git config --global user.email "ACTION@github.com"
-        git config --global user.name "GitHub Action"
-        git add rss/feed.xml
-        git commit -m "Update RSS feed"
-        git push
+      - name: Commit Feed
+        run: |
+          git config --global user.email "ACTION@github.com"
+          git config --global user.name "GitHub Action"
+          git add rss/feed.xml
+          git commit -m "Update RSS feed"
+          git push
