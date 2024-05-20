@@ -16,11 +16,9 @@ import * as core from '@actions/core'
 import {Commit2Feed} from './commit2feed.js'
 
 // main routine
-//const c2f = new Commit2Feed('atsushifx', 'commit2feed')
-//const feed = await c2f.feed()
-async function run() {
-  // for debug feeds
-  const rssfeeds = `
+
+// for debug feeds
+const rssfeeds = `
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
@@ -60,14 +58,14 @@ async function run() {
     </entry>
 </feed>
 `
-
+async function run() {
   try {
     const user = core.getInput('user', {required: true})
     const repo = core.getInput('repo', {required: true})
-
     const c2f = new Commit2Feed(user, repo)
-    // const rssfeeds = c2f.feed() // 本来は、ここでRSSフィードを作成する
+    //
     core.setOutput(`feed`, rssfeeds)
+    console.debug('feed:\n', rssfeeds)
   } catch (error) {
     core.setFailed(error.message)
   }
