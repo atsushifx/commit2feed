@@ -104,16 +104,17 @@ class Commit2Feed {
 
       this._commitDetails = details
     }
-
     const feedItems = this._commitDetails.map(commit => ({
-      title: commit.commit.message,
+      title: commit.commit.message.trim().split('\n')[0],
       id: commit.sha,
       link: commit.html_url,
-      author: {
-        name: commit.commit.author.name,
-        email: commit.commit.author.email,
-        link: commit.author.html_url
-      },
+      author: [
+        {
+          name: commit.commit.author.name,
+          email: commit.commit.author.email
+        }
+      ],
+      description: commit.commit.message.trim(),
       content: commit.files.diff,
       date: new Date(commit.commit.author.date)
     }))
