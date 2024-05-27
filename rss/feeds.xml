@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
     <title>atsushifx / commit2feed</title>
-    <updated>2024-05-20T12:06:26.000Z</updated>
+    <updated>2024-05-27T20:42:35.000Z</updated>
     <generator>htttps://github.com/atsushifx/commit2feed</generator>
     <author>
         <name>atsushifx</name>
@@ -10,6 +10,71 @@
     </author>
     <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
     <subtitle>Latest 5 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Merge pull request #7 from atsushifx/feature_skipbot
+
+update: commitinfo.js: skip GitHub actions bot commits]]></title>
+        <id>ede66ae1234673ee4a0ab6d2f93f938e3f1c2944</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/ede66ae1234673ee4a0ab6d2f93f938e3f1c2944"/>
+        <updated>2024-05-27T20:42:35.000Z</updated>
+        <content type="html"><![CDATA[src/commitinfo.js
+
+  // private repository selector
+  #_branch
+  constructor(user, repo, branch = '') {
+    this.#_branch = 'main'
+    if (branch) {
+      this.#_branch = branch.trim()
+    }
+    const apiUrlWithNum = `${apiUrl}?sha=${this.#_branch}&per_page=${num * 3}`
+      const commits = await response.json()
+      const humanCommits = commits
+        .filter(commit => {
+          const regex = /(actions-user)|(web-flow)/]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: commitinfo.js: skip GitHub actions bot commits
+
+	update: commitinfi.js: skip commits written by bots
+	update: main.js: add debug() for debugging run]]></title>
+        <id>8284325b942085685f30c98ce638871a6d9fc668</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/8284325b942085685f30c98ce638871a6d9fc668"/>
+        <updated>2024-05-27T20:32:41.000Z</updated>
+        <content type="html"><![CDATA[src/commitinfo.js
+
+  // private repository selector
+  #_branch
+  constructor(user, repo, branch = '') {
+    this.#_branch = 'main'
+    if (branch) {
+      this.#_branch = branch.trim()
+    }
+    const apiUrlWithNum = `${apiUrl}?sha=${this.#_branch}&per_page=${num * 3}`
+      const commits = await response.json()
+      const humanCommits = commits
+        .filter(commit => {
+          const regex = /(actions-user)|(web-flow)/]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Update RSS feed]]></title>
+        <id>b83f3ee7b259ff35b3592a588cded60130eec94e</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/b83f3ee7b259ff35b3592a588cded60130eec94e"/>
+        <updated>2024-05-20T12:10:52.000Z</updated>
+        <content type="html"><![CDATA[rss/feeds.xml
+
+    <updated>2024-05-20T12:06:26.000Z</updated>
+    <generator>htttps://github.com/atsushifx/commit2feed</generator>
+    <subtitle>Latest 5 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[initial commit]]]]><![CDATA[></title>
+        <id>5cc8f2cae9102511a002efdd774f168c09f74f98</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/5cc8f2cae9102511a002efdd774f168c09f74f98"/>
+        <updated>2024-05-20T12:06:26.000Z</updated>
+        <content type="html"><![CDATA[.editorconfig
+
+# EditorConfig is awesome: https://EditorConfig.org
+#]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[initial commit]]></title>
         <id>5cc8f2cae9102511a002efdd774f168c09f74f98</id>
