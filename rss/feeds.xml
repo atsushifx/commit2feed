@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
     <title>atsushifx / commit2feed</title>
-    <updated>2024-05-27T20:42:35.000Z</updated>
+    <updated>2024-05-27T20:46:09.000Z</updated>
     <generator>htttps://github.com/atsushifx/commit2feed</generator>
     <author>
         <name>atsushifx</name>
@@ -10,6 +10,56 @@
     </author>
     <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
     <subtitle>Latest 5 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[update: update release/index.js ver 0.1.1
+
+update: generate_rss.yml use v0 to create rss feed
+update: release/index.js build 0.1.1 version
+chore:  commitinfo.js, main.js update header macro comment]]></title>
+        <id>3d3a48ac34250627c10e8b799d92ae4978c130d1</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/3d3a48ac34250627c10e8b799d92ae4978c130d1"/>
+        <updated>2024-05-27T20:46:09.000Z</updated>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+        uses: atsushifx/commit2feed@v0
+------
+release/index.js
+
+
+------
+src/commitinfo.js
+
+// @version   0.1.1
+// select GitHub repositpry from user, repository name, branch
+// default branch is main
+   * @param branch (&optional) srting branch name
+------
+src/main.js
+
+// @vesion  0.1.1
+// @author  Furukawa Atsushi <atsushifx@aglabo.com>
+// @date    2024-05-19]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Update RSS feed]]></title>
+        <id>7b8d1b0449eff0a082bdad294618397d4b5d6eb2</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/7b8d1b0449eff0a082bdad294618397d4b5d6eb2"/>
+        <updated>2024-05-27T20:42:47.000Z</updated>
+        <content type="html"><![CDATA[rss/feeds.xml
+
+    <updated>2024-05-27T20:42:35.000Z</updated>
+    <entry>
+        <title type="html"><![CDATA[Merge pull request #7 from atsushifx/feature_skipbot
+
+update: commitinfo.js: skip GitHub actions bot commits]]]]><![CDATA[></title>
+        <id>ede66ae1234673ee4a0ab6d2f93f938e3f1c2944</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/ede66ae1234673ee4a0ab6d2f93f938e3f1c2944"/>
+        <updated>2024-05-27T20:42:35.000Z</updated>
+        <content type="html"><![CDATA[src/commitinfo.js
+
+  // private repository selector
+  #_branch]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Merge pull request #7 from atsushifx/feature_skipbot
 
@@ -74,25 +124,5 @@ update: commitinfo.js: skip GitHub actions bot commits]]></title>
 
 # EditorConfig is awesome: https://EditorConfig.org
 #]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[initial commit]]></title>
-        <id>5cc8f2cae9102511a002efdd774f168c09f74f98</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/5cc8f2cae9102511a002efdd774f168c09f74f98"/>
-        <updated>2024-05-20T12:06:26.000Z</updated>
-        <content type="html"><![CDATA[.editorconfig
-
-# EditorConfig is awesome: https://EditorConfig.org
-#
-# @(#) : default settings for code of contests
-
-# top-most EditorConfig file
-##
-root = true
-
-# Unix-style newlines with a newline ending every file
-[*]
-end_of_line = lf
-insert_final_newline = true]]></content>
     </entry>
 </feed>
