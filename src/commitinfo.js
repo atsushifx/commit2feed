@@ -21,9 +21,10 @@ class CommitInfo {
   #MAX_COMMITS = 100
   #DIFF_LINE_MAX = 12
 
-  // private
+  // private repository selector
   #_user
   #_repo
+  #_branch
 
   /**
    * @property Commits Commit information
@@ -36,9 +37,10 @@ class CommitInfo {
    * @param user string github user name
    * @param repo string github repository
    */
-  constructor(user, repo) {
+  constructor(user, repo, branch = '') {
     this.#_user = ''
     this.#_repo = ''
+    this.#_branch = 'main'
     this._commits = []
 
     if (user) {
@@ -46,6 +48,9 @@ class CommitInfo {
     }
     if (repo) {
       this.#_repo = repo.trim()
+    }
+    if (branch) {
+      this.#_branch = branch.trim()
     }
   }
 
@@ -161,14 +166,24 @@ class CommitInfo {
     if (!apiUrl) {
       return []
     }
-    const apiUrlWithNum = `${apiUrl}?per_page=${num}`
+    const apiUrlWithNum = `${apiUrl}?sha=${this.#_branch}&per_page=${num * 3}`
 
     try {
       const response = await fetch(apiUrlWithNum)
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
       }
-      this._commits = await response.json()
+      const commits = await response.json()
+      const humanCommits = commits
+        .filter(commit => {
+          const regex = /(actions-user)|(web-flow)/
+
+          return !regex.test(commit.committer.login)
+        })
+        .slice(0, num)
+      this._commits = humanCommits
+      console.debug('commits:\n', this._commits, this._commits.length)
+
       return this._commits
     } catch (error) {
       console.error('Error fetching commits:', error)
