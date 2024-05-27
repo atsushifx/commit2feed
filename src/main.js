@@ -1,8 +1,8 @@
 // @(#) Commi2Feed : github action of commit to rss feed
 //
-// @vesion   0.1.0
-// @author    Furukawa Atsushi <atsushifx@aglabo.com>
-// @date      2024-05-19
+// @vesion  0.1.1
+// @author  Furukawa Atsushi <atsushifx@aglabo.com>
+// @date    2024-05-19
 //
 // @description<<
 //

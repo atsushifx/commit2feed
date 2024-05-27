@@ -1,14 +1,15 @@
 // @(#) CommitInfo : ferch commit info form GitHub repository
 //
 //
-// @version   0.1.0
+// @version   0.1.1
 // @author    Furukawa Atsushi <atsushifx@aglabo.com>
 // @date      2024-05-16
 //
 // @description<<
 //
 // fetch commit form GitHub repository
-//
+// select GitHub repositpry from user, repository name, branch
+// default branch is main
 // <<
 
 /**
@@ -36,6 +37,7 @@ class CommitInfo {
    *
    * @param user string github user name
    * @param repo string github repository
+   * @param branch (&optional) srting branch name
    */
   constructor(user, repo, branch = '') {
     this.#_user = ''
