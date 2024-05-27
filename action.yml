@@ -11,6 +11,12 @@ outputs:
   feed:
     description: 'The generated Atom feed'
 runs:
-  using: 'node20'
-  main: 'src/main.js&' # for debug
-
+  using: 'composite'
+  steps:
+    - run: |
+        if [[ "$GITHUB_REF" =~ "/main$" ]]; then
+          echo "main branch"
+        else
+          echo "develop branch"
+        fi
+      shell: bash
