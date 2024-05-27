@@ -184,8 +184,6 @@ class CommitInfo {
         })
         .slice(0, num)
       this._commits = humanCommits
-      console.debug('commits:\n', this._commits, this._commits.length)
-
       return this._commits
     } catch (error) {
       console.error('Error fetching commits:', error)
@@ -262,13 +260,13 @@ class CommitInfo {
     const commits = await this.fetchCommits(commitNum)
     if (!commits) return await false
 
-    const commitsDiff = []
+    const commitDetails = []
     for (let i = 0; i < commits.length; i++) {
       const detail = await this.nthDetail(i)
       if (!detail) break
-      commitsDiff.push(detail)
+      commitDetails.push(detail)
     }
-    return commitsDiff
+    return commitDetails
   }
 }
 
