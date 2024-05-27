@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
     <title>atsushifx / commit2feed</title>
-    <updated>2024-05-27T21:37:15.000Z</updated>
+    <updated>2024-05-27T21:40:34.000Z</updated>
     <generator>htttps://github.com/atsushifx/commit2feed</generator>
     <author>
         <name>atsushifx</name>
@@ -10,6 +10,26 @@
     </author>
     <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
     <subtitle>Latest 5 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Update RSS feed]]></title>
+        <id>05be19cbb4581a475d12c3d1f036cda9225f6cdc</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/05be19cbb4581a475d12c3d1f036cda9225f6cdc"/>
+        <updated>2024-05-27T21:40:34.000Z</updated>
+        <content type="html"><![CDATA[rss/feeds.xml
+
+    <updated>2024-05-27T21:37:15.000Z</updated>
+    <entry>
+        <title type="html"><![CDATA[Merge branch 'bugfix']]]]><![CDATA[></title>
+        <id>4cff10631735a6b4f3a4b534e53b8de305bafd19</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/4cff10631735a6b4f3a4b534e53b8de305bafd19"/>
+        <updated>2024-05-27T21:37:15.000Z</updated>
+        <content type="html"><![CDATA[src/commit2feed.js
+
+      title: commit.commit.message.trim().split('\n')[0],
+      author: [
+        {
+          name: commit.commit.author.name,]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Merge branch 'bugfix']]></title>
         <id>4cff10631735a6b4f3a4b534e53b8de305bafd19</id>
@@ -103,25 +123,5 @@ src/main.js
 // @vesion  0.1.1
 // @author  Furukawa Atsushi <atsushifx@aglabo.com>
 // @date    2024-05-19]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Update RSS feed]]></title>
-        <id>7b8d1b0449eff0a082bdad294618397d4b5d6eb2</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/7b8d1b0449eff0a082bdad294618397d4b5d6eb2"/>
-        <updated>2024-05-27T20:42:47.000Z</updated>
-        <content type="html"><![CDATA[rss/feeds.xml
-
-    <updated>2024-05-27T20:42:35.000Z</updated>
-    <entry>
-        <title type="html"><![CDATA[Merge pull request #7 from atsushifx/feature_skipbot
-
-update: commitinfo.js: skip GitHub actions bot commits]]]]><![CDATA[></title>
-        <id>ede66ae1234673ee4a0ab6d2f93f938e3f1c2944</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/ede66ae1234673ee4a0ab6d2f93f938e3f1c2944"/>
-        <updated>2024-05-27T20:42:35.000Z</updated>
-        <content type="html"><![CDATA[src/commitinfo.js
-
-  // private repository selector
-  #_branch]]></content>
     </entry>
 </feed>
