@@ -12,15 +12,5 @@ outputs:
     description: 'The generated Atom feed'
 runs:
   using: 'node20'
-  main: ${{ fromJSON(steps.get-entry-point.outputs.entry-point) }} # エントリーポイン
+  main: 'src/main.js&' # for debug
 
-steps:
-  - id: get-entry-point
-    run: |
-      # mainブランチの場合
-      if ${{ github.ref == 'refs/heads/main' }}
-      then
-        echo "::set-output name=entry-point::'release/index.js'"
-      else # developブランチの場合
-        echo "::set-output name=entry-point::'src/main.js'"
-      fi
