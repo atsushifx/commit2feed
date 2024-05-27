@@ -26,7 +26,7 @@ async function main() {
   try {
     const user = core.getInput('user', {required: true})
     const repo = core.getInput('repo', {required: true})
-    const c2f = new Commit2Feed(user, repo)
+    const c2f = new Commit2Feed(user, repo, 'feature_skipbot')
     const rssfeeds = await c2f.feeds()
 
     //
@@ -37,5 +37,17 @@ async function main() {
   }
 }
 
+async function debug() {
+  try {
+    const user = 'atsushifx'
+    const repo = 'til'
+    const c2f = new Commit2Feed(user, repo)
+    const rssfeeds = await c2f.feeds()
+    console.debug('feed:\n', rssfeeds)
+  } catch (error) {
+    console.error(error)
+  }
+}
 //
+
 main()
