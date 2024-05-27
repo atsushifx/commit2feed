@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate Feed
         id: generate-feed
-        uses: ./
+        uses: atsushifx@commit2feed@develop
         with:
           user: 'atsushifx'
           repo: 'commit2feed'
