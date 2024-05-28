@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
     <title>atsushifx / commit2feed</title>
-    <updated>2024-05-28T07:38:19.000Z</updated>
+    <updated>2024-05-28T08:03:36.000Z</updated>
     <generator>htttps://github.com/atsushifx/commit2feed</generator>
     <author>
         <name>atsushifx</name>
@@ -10,6 +10,123 @@
     </author>
     <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
     <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[merge: merge develop branch to release]]></title>
+        <id>4ad762c16010d802bdfb17c2b1d071d920c2fe09</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/4ad762c16010d802bdfb17c2b1d071d920c2fe09"/>
+        <updated>2024-05-28T08:03:36.000Z</updated>
+        <summary type="html"><![CDATA[merge: merge develop branch to release]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+      - name: Upload Feeds (by Commit)
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "Actions User"
+          git add rss/feeds.xml
+          git commit -m "Update RSS Feed"
+          git push
+------
+.gitignore
+
+# RSS Feed
+# rss/*
+------
+README.md
+
+[RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[set develop branch's rss feed]]></title>
+        <id>f767052c5086be6333f251cc97c060efd7543952</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/f767052c5086be6333f251cc97c060efd7543952"/>
+        <updated>2024-05-28T08:02:00.000Z</updated>
+        <summary type="html"><![CDATA[set develop branch's rss feed]]></summary>
+        <content type="html"><![CDATA[README.md
+
+[RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Merge remote-tracking branch 'refs/remotes/origin/develop' into develop]]></title>
+        <id>5b6bae23b73d2c7004ec3aea34b2e7d18ed8eaeb</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/5b6bae23b73d2c7004ec3aea34b2e7d18ed8eaeb"/>
+        <updated>2024-05-28T08:01:25.000Z</updated>
+        <summary type="html"><![CDATA[Merge remote-tracking branch 'refs/remotes/origin/develop' into develop]]></summary>
+        <content type="html"><![CDATA[rss/feeds.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
+    <title>atsushifx / commit2feed</title>
+    <updated>2024-05-28T07:38:19.000Z</updated>
+    <generator>htttps://github.com/atsushifx/commit2feed</generator>
+    <author>
+        <name>atsushifx</name>
+        <uri>https://github.com/atsushifx</uri>
+    </author>
+    <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
+    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[gitignore ignore rss settings]]></title>
+        <id>cbdb03e9c889cf37a086c807f4b162646b13c3f6</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/cbdb03e9c889cf37a086c807f4b162646b13c3f6"/>
+        <updated>2024-05-28T07:58:54.000Z</updated>
+        <summary type="html"><![CDATA[gitignore ignore rss settings]]></summary>
+        <content type="html"><![CDATA[.gitignore
+
+# rss/*]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[fix; gitignore allow rss feed to commit]]></title>
+        <id>d32c881134aa2e2e5d6cfb19638bd87c5405d2a4</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/d32c881134aa2e2e5d6cfb19638bd87c5405d2a4"/>
+        <updated>2024-05-28T07:56:29.000Z</updated>
+        <summary type="html"><![CDATA[fix; gitignore allow rss feed to commit]]></summary>
+        <content type="html"><![CDATA[.gitignore
+
+# RSS Feed
+!rss/*]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: use git to push rss feeds to github repository]]></title>
+        <id>671d49ce27f000ebd07ef5cbbe5e57514fa58419</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/671d49ce27f000ebd07ef5cbbe5e57514fa58419"/>
+        <updated>2024-05-28T07:53:51.000Z</updated>
+        <summary type="html"><![CDATA[update: use git to push rss feeds to github repository]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+      - name: Upload Feeds (by Commit)
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "Actions User"
+          git add rss/feeds.xml
+          git commit -m "Update RSS Feed"
+          git push]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[merge: merge development to release test]]></title>
         <id>7b8a711aef5b867d21109d43b35505bb7f7b0584</id>
@@ -108,114 +225,6 @@ package.json
 
         uses: actions/setup-node@v4
         uses: atsushifx/commit2feed@main]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[chore: RSS by develop branch action]]></title>
-        <id>a3a4df4e23cef25c37008a7844d2505c649e6dfa</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/a3a4df4e23cef25c37008a7844d2505c649e6dfa"/>
-        <updated>2024-05-27T22:27:24.000Z</updated>
-        <summary type="html"><![CDATA[chore: RSS by develop branch action]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
-
-        uses: atsushifx@commit2feed@develop]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[chore: use checkout@v4]]></title>
-        <id>bf6047f716f85d9e5b2cf9809ce07e7932e26448</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/bf6047f716f85d9e5b2cf9809ce07e7932e26448"/>
-        <updated>2024-05-27T22:23:38.000Z</updated>
-        <summary type="html"><![CDATA[chore: use checkout@v4]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
-
-      - uses: actions/checkout@v4]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[chore: node20を使うように変更]]></title>
-        <id>86137aeffeaccc4f1d16d3212b0ea4f238653397</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/86137aeffeaccc4f1d16d3212b0ea4f238653397"/>
-        <updated>2024-05-27T22:12:50.000Z</updated>
-        <summary type="html"><![CDATA[chore: node20を使うように変更]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Merge branch 'main' into develop]]></title>
-        <id>567536b6537b752792f9b7d3d1f06041b4e6a3bb</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/567536b6537b752792f9b7d3d1f06041b4e6a3bb"/>
-        <updated>2024-05-27T22:08:29.000Z</updated>
-        <summary type="html"><![CDATA[Merge branch 'main' into develop]]></summary>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[update: generate_rss.yml]]></title>
-        <id>3ee7ced8dbaec3a0206aa5836428a42bded667ac</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/3ee7ced8dbaec3a0206aa5836428a42bded667ac"/>
-        <updated>2024-05-27T21:58:45.000Z</updated>
-        <summary type="html"><![CDATA[update: generate_rss.yml
-
-upadte: only upload rss feeds]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
-
-        with:
-          ref: develop
-        uses: ./
-      - name: Upload Feeds
-        uses: actions/upload-artifact@v4
-        with:
-          name: feeds
-          path: rss/feeds.xml]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[chore: ignore RSS Feed from this repository]]></title>
-        <id>b2e787c232a66a58869a826b53f682b4ceb5d8cd</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/b2e787c232a66a58869a826b53f682b4ceb5d8cd"/>
-        <updated>2024-05-27T21:57:37.000Z</updated>
-        <summary type="html"><![CDATA[chore: ignore RSS Feed from this repository]]></summary>
-        <content type="html"><![CDATA[.gitignore
-
-### Commit2Feed ignore settings
-rss/*
-
-------
-rss/.keep
-
-// Copyright (c) 2024 Furukawa Atsushi <atsushifx@aglabo.com>
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
-
-------
-rss/feeds.xml
-
-]]></content>
         <author>
             <name>Furukawa Atsushi</name>
             <email>atsushifx@gmail.com</email>
