@@ -81,7 +81,7 @@ class Commit2Feed {
       id: `${this._commitInfo.getRepositoryUrl()}/commits/latest`,
       link: `${this._commitInfo.getRepositoryUrl()}/commits/latest`,
       updated: new Date(this._commitInfo.getLatesCommitDate()),
-      generator: 'htttps://github.com/atsushifx/commit2feed',
+      generator: 'https://github.com/atsushifx/commit2feed',
       author: {
         name: this._commitInfo.getOwner(),
         link: this._commitInfo.getOwnerUrl()
@@ -133,7 +133,7 @@ class Commit2Feed {
     await this.initFeed()
     await this.generateFeedItems()
 
-    return this._feed.atom1()
+    return this._feed.rss2()
   }
 }
 
