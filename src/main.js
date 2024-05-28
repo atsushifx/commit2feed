@@ -30,8 +30,8 @@ async function main() {
     const rssfeeds = await c2f.feeds()
 
     //
-    core.setOutput(`feed`, rssfeeds)
     console.debug('feed:\n', rssfeeds)
+    core.setOutput(`feed`, rssfeeds)
   } catch (error) {
     core.setFailed(error.message)
   }
@@ -50,5 +50,5 @@ async function debug() {
 }
 //
 
-main()
+main() // main routin for production release
 // debug() // for bugfix/develop main

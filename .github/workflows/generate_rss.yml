@@ -12,13 +12,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: develop
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
       - name: Generate Feed
         id: generate-feed
-        uses: atsushifx/commit2feed@main
+        uses: atsushifx/commit2feed@develop
         with:
           user: 'atsushifx'
           repo: 'commit2feed'

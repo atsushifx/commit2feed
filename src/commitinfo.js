@@ -1,9 +1,9 @@
 // @(#) CommitInfo : ferch commit info form GitHub repository
 //
 //
-// @version   0.1.1
-// @author    Furukawa Atsushi <atsushifx@aglabo.com>
-// @date      2024-05-16
+// @version 0.1.1
+// @author  Furukawa Atsushi <atsushifx@aglabo.com>
+// @date    2024-05-16
 //
 // @description<<
 //
