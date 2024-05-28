@@ -11,7 +11,7 @@
     "compile": "npm exec babel src --out-dir dist",
     "release": "npx ncc build ./dist/main.js -o release -m ",
     "build": "npm run compile && npm run release",
-    "jsdoc": "npxn jsdoc -c ./jsdoc.config.json",
+    "jsdoc": "npx jsdoc -c ./jsdoc.config.json",
     "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" npx jest",
     "lint": "npx eslint src/**.js --fix",
     "format": "npx prettier src/**.js --write"
