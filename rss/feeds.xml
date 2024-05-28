@@ -1,51 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
-    <title>atsushifx / commit2feed</title>
-    <updated>2024-05-28T08:25:46.000Z</updated>
-    <generator>htttps://github.com/atsushifx/commit2feed</generator>
-    <author>
-        <name>atsushifx</name>
-        <uri>https://github.com/atsushifx</uri>
-    </author>
-    <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
-    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>
-    <entry>
-        <title type="html"><![CDATA[fix: generator type]]></title>
-        <id>4c4e47958c0083be8429b9001a51a54e174f643b</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/4c4e47958c0083be8429b9001a51a54e174f643b"/>
-        <updated>2024-05-28T08:25:46.000Z</updated>
-        <summary type="html"><![CDATA[fix: generator type]]></summary>
-        <content type="html"><![CDATA[src/commit2feed.js
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>atsushifx / commit2feed</title>
+        <link>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</link>
+        <description>Latest 10 commits for atsushifx / commit2feed</description>
+        <lastBuildDate>Tue, 28 May 2024 08:25:46 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/atsushifx/commit2feed</generator>
+        <item>
+            <title><![CDATA[fix: generator type]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/4c4e47958c0083be8429b9001a51a54e174f643b</link>
+            <guid>4c4e47958c0083be8429b9001a51a54e174f643b</guid>
+            <pubDate>Tue, 28 May 2024 08:25:46 GMT</pubDate>
+            <description><![CDATA[fix: generator type]]></description>
+            <content:encoded><![CDATA[src/commit2feed.js
 
-      generator: 'https://github.com/atsushifx/commit2feed',]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[add: rss feed for main]]></title>
-        <id>252f99d3c7a7d974079c495744971bcb387c65be</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/252f99d3c7a7d974079c495744971bcb387c65be"/>
-        <updated>2024-05-28T08:05:39.000Z</updated>
-        <summary type="html"><![CDATA[add: rss feed for main]]></summary>
-        <content type="html"><![CDATA[README.md
+      generator: 'https://github.com/atsushifx/commit2feed',]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[add: rss feed for main]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/252f99d3c7a7d974079c495744971bcb387c65be</link>
+            <guid>252f99d3c7a7d974079c495744971bcb387c65be</guid>
+            <pubDate>Tue, 28 May 2024 08:05:39 GMT</pubDate>
+            <description><![CDATA[add: rss feed for main]]></description>
+            <content:encoded><![CDATA[README.md
 
 [RSS Feed for main](https://raw.githubusercontent.com/atsushifx/commit2feed/main/rss/feeds.xml)
-]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[merge: merge develop branch to release]]></title>
-        <id>4ad762c16010d802bdfb17c2b1d071d920c2fe09</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/4ad762c16010d802bdfb17c2b1d071d920c2fe09"/>
-        <updated>2024-05-28T08:03:36.000Z</updated>
-        <summary type="html"><![CDATA[merge: merge develop branch to release]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[merge: merge develop branch to release]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/4ad762c16010d802bdfb17c2b1d071d920c2fe09</link>
+            <guid>4ad762c16010d802bdfb17c2b1d071d920c2fe09</guid>
+            <pubDate>Tue, 28 May 2024 08:03:36 GMT</pubDate>
+            <description><![CDATA[merge: merge develop branch to release]]></description>
+            <content:encoded><![CDATA[.github/workflows/generate_rss.yml
 
       - name: Upload Feeds (by Commit)
         run: |
@@ -62,33 +53,27 @@
 ------
 README.md
 
-[RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[set develop branch's rss feed]]></title>
-        <id>f767052c5086be6333f251cc97c060efd7543952</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/f767052c5086be6333f251cc97c060efd7543952"/>
-        <updated>2024-05-28T08:02:00.000Z</updated>
-        <summary type="html"><![CDATA[set develop branch's rss feed]]></summary>
-        <content type="html"><![CDATA[README.md
+[RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[set develop branch's rss feed]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/f767052c5086be6333f251cc97c060efd7543952</link>
+            <guid>f767052c5086be6333f251cc97c060efd7543952</guid>
+            <pubDate>Tue, 28 May 2024 08:02:00 GMT</pubDate>
+            <description><![CDATA[set develop branch's rss feed]]></description>
+            <content:encoded><![CDATA[README.md
 
-[RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Merge remote-tracking branch 'refs/remotes/origin/develop' into develop]]></title>
-        <id>5b6bae23b73d2c7004ec3aea34b2e7d18ed8eaeb</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/5b6bae23b73d2c7004ec3aea34b2e7d18ed8eaeb"/>
-        <updated>2024-05-28T08:01:25.000Z</updated>
-        <summary type="html"><![CDATA[Merge remote-tracking branch 'refs/remotes/origin/develop' into develop]]></summary>
-        <content type="html"><![CDATA[rss/feeds.xml
+[RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[Merge remote-tracking branch 'refs/remotes/origin/develop' into develop]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/5b6bae23b73d2c7004ec3aea34b2e7d18ed8eaeb</link>
+            <guid>5b6bae23b73d2c7004ec3aea34b2e7d18ed8eaeb</guid>
+            <pubDate>Tue, 28 May 2024 08:01:25 GMT</pubDate>
+            <description><![CDATA[Merge remote-tracking branch 'refs/remotes/origin/develop' into develop]]></description>
+            <content:encoded><![CDATA[rss/feeds.xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -101,48 +86,39 @@ README.md
         <uri>https://github.com/atsushifx</uri>
     </author>
     <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
-    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[gitignore ignore rss settings]]></title>
-        <id>cbdb03e9c889cf37a086c807f4b162646b13c3f6</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/cbdb03e9c889cf37a086c807f4b162646b13c3f6"/>
-        <updated>2024-05-28T07:58:54.000Z</updated>
-        <summary type="html"><![CDATA[gitignore ignore rss settings]]></summary>
-        <content type="html"><![CDATA[.gitignore
+    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[gitignore ignore rss settings]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/cbdb03e9c889cf37a086c807f4b162646b13c3f6</link>
+            <guid>cbdb03e9c889cf37a086c807f4b162646b13c3f6</guid>
+            <pubDate>Tue, 28 May 2024 07:58:54 GMT</pubDate>
+            <description><![CDATA[gitignore ignore rss settings]]></description>
+            <content:encoded><![CDATA[.gitignore
 
-# rss/*]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[fix; gitignore allow rss feed to commit]]></title>
-        <id>d32c881134aa2e2e5d6cfb19638bd87c5405d2a4</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/d32c881134aa2e2e5d6cfb19638bd87c5405d2a4"/>
-        <updated>2024-05-28T07:56:29.000Z</updated>
-        <summary type="html"><![CDATA[fix; gitignore allow rss feed to commit]]></summary>
-        <content type="html"><![CDATA[.gitignore
+# rss/*]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[fix; gitignore allow rss feed to commit]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/d32c881134aa2e2e5d6cfb19638bd87c5405d2a4</link>
+            <guid>d32c881134aa2e2e5d6cfb19638bd87c5405d2a4</guid>
+            <pubDate>Tue, 28 May 2024 07:56:29 GMT</pubDate>
+            <description><![CDATA[fix; gitignore allow rss feed to commit]]></description>
+            <content:encoded><![CDATA[.gitignore
 
 # RSS Feed
-!rss/*]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[update: use git to push rss feeds to github repository]]></title>
-        <id>671d49ce27f000ebd07ef5cbbe5e57514fa58419</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/671d49ce27f000ebd07ef5cbbe5e57514fa58419"/>
-        <updated>2024-05-28T07:53:51.000Z</updated>
-        <summary type="html"><![CDATA[update: use git to push rss feeds to github repository]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+!rss/*]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[update: use git to push rss feeds to github repository]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/671d49ce27f000ebd07ef5cbbe5e57514fa58419</link>
+            <guid>671d49ce27f000ebd07ef5cbbe5e57514fa58419</guid>
+            <pubDate>Tue, 28 May 2024 07:53:51 GMT</pubDate>
+            <description><![CDATA[update: use git to push rss feeds to github repository]]></description>
+            <content:encoded><![CDATA[.github/workflows/generate_rss.yml
 
       - name: Upload Feeds (by Commit)
         run: |
@@ -150,19 +126,16 @@ README.md
           git config --global user.name "Actions User"
           git add rss/feeds.xml
           git commit -m "Update RSS Feed"
-          git push]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[merge: merge development to release test]]></title>
-        <id>7b8a711aef5b867d21109d43b35505bb7f7b0584</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/7b8a711aef5b867d21109d43b35505bb7f7b0584"/>
-        <updated>2024-05-28T07:38:19.000Z</updated>
-        <summary type="html"><![CDATA[merge: merge development to release test]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+          git push]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[merge: merge development to release test]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/7b8a711aef5b867d21109d43b35505bb7f7b0584</link>
+            <guid>7b8a711aef5b867d21109d43b35505bb7f7b0584</guid>
+            <pubDate>Tue, 28 May 2024 07:38:19 GMT</pubDate>
+            <description><![CDATA[merge: merge development to release test]]></description>
+            <content:encoded><![CDATA[.github/workflows/generate_rss.yml
 
         with:
           ref: develop
@@ -187,19 +160,16 @@ package.json
   "dependencies": {
     "@actions/core": "^1.10.1",
     "feed": "^4.2.2"
-  },]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[update: package.jsonをnpm対応に]]></title>
-        <id>15f90d0a4f71f7c99e7900dccfaecb289afa8ec2</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/15f90d0a4f71f7c99e7900dccfaecb289afa8ec2"/>
-        <updated>2024-05-28T06:25:41.000Z</updated>
-        <summary type="html"><![CDATA[update: package.jsonをnpm対応に]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+  },]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+        <item>
+            <title><![CDATA[update: package.jsonをnpm対応に]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/15f90d0a4f71f7c99e7900dccfaecb289afa8ec2</link>
+            <guid>15f90d0a4f71f7c99e7900dccfaecb289afa8ec2</guid>
+            <pubDate>Tue, 28 May 2024 06:25:41 GMT</pubDate>
+            <description><![CDATA[update: package.jsonをnpm対応に]]></description>
+            <content:encoded><![CDATA[.github/workflows/generate_rss.yml
 
         with:
           ref: develop
@@ -224,10 +194,8 @@ package.json
   "dependencies": {
     "@actions/core": "^1.10.1",
     "feed": "^4.2.2"
-  },]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-</feed>
+  },]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
+    </channel>
+</rss>
