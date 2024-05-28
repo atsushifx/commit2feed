@@ -7,13 +7,13 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "compile": "npm exec babel src --out-dir dist",
-    "release": "npx ncc build ./dist/main.js -o release -m ",
-    "build": "npm run compile && npm run release",
-    "jsdoc": "npx jsdoc -c ./jsdoc.config.json",
-    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" npx jest",
-    "lint": "npx eslint src/**.js --fix",
-    "format": "npx prettier src/**.js --write"
+    "compile": "pnpm exec babel src --out-dir dist",
+    "release": "pnpm exec ncc build ./dist/main.js -o release -m ",
+    "build": "pnpm compile && pnpm release",
+    "jsdoc": "pnpx jsdoc -c ./jsdoc.config.json",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" pnpx jest",
+    "lint": "pnpx eslint src/**.js --fix",
+    "format": "pnpx prettier src/**.js --write"
   },
   "keywords": [
     "github",
@@ -42,7 +42,7 @@
     "prettier": "^3.2.5"
   },
   "lint-staged": {
-    "src/*.js": "pnpx eslint --fix",
-    "**.js*": "pnpx prettier --write"
+    "src/*.js": "ppnpx eslint --fix",
+    "**.js*": "ppnpx prettier --write"
   }
 }
