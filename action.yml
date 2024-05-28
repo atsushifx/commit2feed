@@ -12,4 +12,4 @@ outputs:
     description: 'The generated Atom feed'
 runs:
   using: 'node20'
-  main: 'src/main.js' # for Develoment
+  main: 'release/index.js'

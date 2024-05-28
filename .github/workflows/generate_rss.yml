@@ -21,8 +21,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - run: npm install
-
       - name: Generate Feed
         id: generate-feed
         uses: atsushifx/commit2feed@develop
