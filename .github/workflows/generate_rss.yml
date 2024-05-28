@@ -21,7 +21,7 @@ jobs:
 
       - name: Generate Feed
         id: generate-feed
-        uses: atsushifx/commit2feed@develop
+        uses: atsushifx/commit2feed@main
         with:
           user: 'atsushifx'
           repo: 'commit2feed'
