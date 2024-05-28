@@ -13,8 +13,11 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - run: |
-        if [[ "$GITHUB_REF" =~ "/main$" ]]; then
+    - name: check branch
+      id: check-branch
+      run: |
+        echo "$GITHUB_REF"
+        if [[ $GITHUB_REF =~ /main$ ]]; then
           echo "main branch"
         else
           echo "develop branch"
