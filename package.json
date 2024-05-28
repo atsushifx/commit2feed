@@ -7,20 +7,23 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "prepare": "husky",
-    "compile": "pnpm exec babel src --out-dir dist",
-    "release": "pnpm exec ncc build ./dist/main.js -o release -m ",
-    "build": "pnpm compile && pnpm release",
-    "jsdoc": "pnpx jsdoc -c ./jsdoc.config.json",
-    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" pnpx jest",
-    "lint": "pnpx eslint src/**.js --fix",
-    "format": "pnpx prettier src/**.js --write"
+    "compile": "npm exec babel src --out-dir dist",
+    "release": "npx ncc build ./dist/main.js -o release -m ",
+    "build": "npm run compile && npm run release",
+    "jsdoc": "npx jsdoc -c ./jsdoc.config.json",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" npx jest",
+    "lint": "npx eslint src/**.js --fix",
+    "format": "npx prettier src/**.js --write"
   },
   "keywords": [
     "github",
     "actions",
     "javascript"
   ],
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "feed": "^4.2.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.24.5",
     "@babel/core": "^7.24.5",
@@ -41,9 +44,5 @@
   "lint-staged": {
     "src/*.js": "pnpx eslint --fix",
     "**.js*": "pnpx prettier --write"
-  },
-  "dependencies": {
-    "@actions/core": "^1.10.1",
-    "feed": "^4.2.2"
   }
 }
