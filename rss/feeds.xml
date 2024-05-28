@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
     <title>atsushifx / commit2feed</title>
-    <updated>2024-05-28T08:03:36.000Z</updated>
+    <updated>2024-05-28T08:05:39.000Z</updated>
     <generator>htttps://github.com/atsushifx/commit2feed</generator>
     <author>
         <name>atsushifx</name>
@@ -10,6 +10,21 @@
     </author>
     <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
     <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[add: rss feed for main]]></title>
+        <id>252f99d3c7a7d974079c495744971bcb387c65be</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/252f99d3c7a7d974079c495744971bcb387c65be"/>
+        <updated>2024-05-28T08:05:39.000Z</updated>
+        <summary type="html"><![CDATA[add: rss feed for main]]></summary>
+        <content type="html"><![CDATA[README.md
+
+[RSS Feed for main](https://raw.githubusercontent.com/atsushifx/commit2feed/main/rss/feeds.xml)
+]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[merge: merge develop branch to release]]></title>
         <id>4ad762c16010d802bdfb17c2b1d071d920c2fe09</id>
@@ -210,21 +225,6 @@ package.json
         <content type="html"><![CDATA[release/index.js
 
 ]]></content>
-        <author>
-            <name>Furukawa Atsushi</name>
-            <email>atsushifx@gmail.com</email>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[generate rss from branch main]]></title>
-        <id>a42b120df4e4f855bcddcf2d4148b87fbdef58ed</id>
-        <link href="https://github.com/atsushifx/commit2feed/commit/a42b120df4e4f855bcddcf2d4148b87fbdef58ed"/>
-        <updated>2024-05-27T22:49:33.000Z</updated>
-        <summary type="html"><![CDATA[generate rss from branch main]]></summary>
-        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
-
-        uses: actions/setup-node@v4
-        uses: atsushifx/commit2feed@main]]></content>
         <author>
             <name>Furukawa Atsushi</name>
             <email>atsushifx@gmail.com</email>
