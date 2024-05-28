@@ -24,8 +24,10 @@ import {Commit2Feed} from './commit2feed.js'
  */
 async function main() {
   try {
-    const user = core.getInput('user', {required: true})
-    const repo = core.getInput('repo', {required: true})
+    const user = core.getInput('user')
+    const repo = core.getInput('repo')
+    console.debug('user:', user, ' repo:', repo)
+
     const c2f = new Commit2Feed(user, repo, 'feature_skipbot')
     const rssfeeds = await c2f.feeds()
 

@@ -21,7 +21,7 @@ jobs:
 
       - name: Generate Feed
         id: generate-feed
-        uses: atsushifx/commit2feed@main
+        uses: atsushifx/commit2feed@develop
         with:
           user: 'atsushifx'
           repo: 'commit2feed'
@@ -32,6 +32,7 @@ jobs:
           cat <<'EOF' > rss/feeds.xml
           ${{ steps.generate-feed.outputs.feed }}
           EOF
+          cat rss/feeds.xml
 
       - name: Upload Feeds
         uses: actions/upload-artifact@v4

@@ -10,16 +10,9 @@ inputs:
 outputs:
   feed:
     description: 'The generated Atom feed'
+  main_script:
+    description: 'main script for execute GitHub Action'
 runs:
-  using: 'composite'
-  steps:
-    - name: check branch
-      id: check-branch
-      run: |
-        echo "$GITHUB_REF"
-        if [[ $GITHUB_REF =~ /main$ ]]; then
-          echo "main branch"
-        else
-          echo "develop branch"
-        fi
-      shell: bash
+  using: 'node20'
+  main: 'src/main.js' # for Development
+# main:release/index.js # for Production
