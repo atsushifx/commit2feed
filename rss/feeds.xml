@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</id>
+    <title>atsushifx / commit2feed</title>
+    <updated>2024-05-28T07:38:19.000Z</updated>
+    <generator>htttps://github.com/atsushifx/commit2feed</generator>
+    <author>
+        <name>atsushifx</name>
+        <uri>https://github.com/atsushifx</uri>
+    </author>
+    <link rel="alternate" href="https://api.github.com/repos/atsushifx/commit2feed/commits/latest"/>
+    <subtitle>Latest 10 commits for atsushifx / commit2feed</subtitle>
+    <entry>
+        <title type="html"><![CDATA[merge: merge development to release test]]></title>
+        <id>7b8a711aef5b867d21109d43b35505bb7f7b0584</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/7b8a711aef5b867d21109d43b35505bb7f7b0584"/>
+        <updated>2024-05-28T07:38:19.000Z</updated>
+        <summary type="html"><![CDATA[merge: merge development to release test]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+        with:
+          ref: develop
+        with:
+          node-version: '20'
+          cache: 'npm'
+        uses: atsushifx/commit2feed@develop
+------
+package-lock.json
+
+
+------
+package.json
+
+    "compile": "npm exec babel src --out-dir dist",
+    "release": "npx ncc build ./dist/main.js -o release -m ",
+    "build": "npm run compile && npm run release",
+    "jsdoc": "npx jsdoc -c ./jsdoc.config.json",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" npx jest",
+    "lint": "npx eslint src/**.js --fix",
+    "format": "npx prettier src/**.js --write"
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "feed": "^4.2.2"
+  },]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: package.jsonをnpm対応に]]></title>
+        <id>15f90d0a4f71f7c99e7900dccfaecb289afa8ec2</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/15f90d0a4f71f7c99e7900dccfaecb289afa8ec2"/>
+        <updated>2024-05-28T06:25:41.000Z</updated>
+        <summary type="html"><![CDATA[update: package.jsonをnpm対応に]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+        with:
+          ref: develop
+        with:
+          node-version: '20'
+          cache: 'npm'
+        uses: atsushifx/commit2feed@develop
+------
+package-lock.json
+
+
+------
+package.json
+
+    "compile": "npm exec babel src --out-dir dist",
+    "release": "npx ncc build ./dist/main.js -o release -m ",
+    "build": "npm run compile && npm run release",
+    "jsdoc": "npx jsdoc -c ./jsdoc.config.json",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" npx jest",
+    "lint": "npx eslint src/**.js --fix",
+    "format": "npx prettier src/**.js --write"
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "feed": "^4.2.2"
+  },]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: update index.js.by build]]></title>
+        <id>5eb35548f798742afe12404c4dbefee033e245fe</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/5eb35548f798742afe12404c4dbefee033e245fe"/>
+        <updated>2024-05-28T06:19:52.000Z</updated>
+        <summary type="html"><![CDATA[update: update index.js.by build]]></summary>
+        <content type="html"><![CDATA[release/index.js
+
+]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[generate rss from branch main]]></title>
+        <id>a42b120df4e4f855bcddcf2d4148b87fbdef58ed</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/a42b120df4e4f855bcddcf2d4148b87fbdef58ed"/>
+        <updated>2024-05-27T22:49:33.000Z</updated>
+        <summary type="html"><![CDATA[generate rss from branch main]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+        uses: actions/setup-node@v4
+        uses: atsushifx/commit2feed@main]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[chore: RSS by develop branch action]]></title>
+        <id>a3a4df4e23cef25c37008a7844d2505c649e6dfa</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/a3a4df4e23cef25c37008a7844d2505c649e6dfa"/>
+        <updated>2024-05-27T22:27:24.000Z</updated>
+        <summary type="html"><![CDATA[chore: RSS by develop branch action]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+        uses: atsushifx@commit2feed@develop]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[chore: use checkout@v4]]></title>
+        <id>bf6047f716f85d9e5b2cf9809ce07e7932e26448</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/bf6047f716f85d9e5b2cf9809ce07e7932e26448"/>
+        <updated>2024-05-27T22:23:38.000Z</updated>
+        <summary type="html"><![CDATA[chore: use checkout@v4]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+      - uses: actions/checkout@v4]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[chore: node20を使うように変更]]></title>
+        <id>86137aeffeaccc4f1d16d3212b0ea4f238653397</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/86137aeffeaccc4f1d16d3212b0ea4f238653397"/>
+        <updated>2024-05-27T22:12:50.000Z</updated>
+        <summary type="html"><![CDATA[chore: node20を使うように変更]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Merge branch 'main' into develop]]></title>
+        <id>567536b6537b752792f9b7d3d1f06041b4e6a3bb</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/567536b6537b752792f9b7d3d1f06041b4e6a3bb"/>
+        <updated>2024-05-27T22:08:29.000Z</updated>
+        <summary type="html"><![CDATA[Merge branch 'main' into develop]]></summary>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[update: generate_rss.yml]]></title>
+        <id>3ee7ced8dbaec3a0206aa5836428a42bded667ac</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/3ee7ced8dbaec3a0206aa5836428a42bded667ac"/>
+        <updated>2024-05-27T21:58:45.000Z</updated>
+        <summary type="html"><![CDATA[update: generate_rss.yml
+
+upadte: only upload rss feeds]]></summary>
+        <content type="html"><![CDATA[.github/workflows/generate_rss.yml
+
+        with:
+          ref: develop
+        uses: ./
+      - name: Upload Feeds
+        uses: actions/upload-artifact@v4
+        with:
+          name: feeds
+          path: rss/feeds.xml]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[chore: ignore RSS Feed from this repository]]></title>
+        <id>b2e787c232a66a58869a826b53f682b4ceb5d8cd</id>
+        <link href="https://github.com/atsushifx/commit2feed/commit/b2e787c232a66a58869a826b53f682b4ceb5d8cd"/>
+        <updated>2024-05-27T21:57:37.000Z</updated>
+        <summary type="html"><![CDATA[chore: ignore RSS Feed from this repository]]></summary>
+        <content type="html"><![CDATA[.gitignore
+
+### Commit2Feed ignore settings
+rss/*
+
+------
+rss/.keep
+
+// Copyright (c) 2024 Furukawa Atsushi <atsushifx@aglabo.com>
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+------
+rss/feeds.xml
+
+]]></content>
+        <author>
+            <name>Furukawa Atsushi</name>
+            <email>atsushifx@gmail.com</email>
+        </author>
+    </entry>
+</feed>
