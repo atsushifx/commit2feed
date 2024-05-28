@@ -2,6 +2,8 @@
 
 ## RSS Feed
 
+[RSS Feed for main](https://raw.githubusercontent.com/atsushifx/commit2feed/main/rss/feeds.xml)
+
 [RSS Feed for Develeop](https://raw.githubusercontent.com/atsushifx/commit2feed/develop/rss/feeds.xml)
 
 ## main
