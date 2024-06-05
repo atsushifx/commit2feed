@@ -75,7 +75,8 @@ class Commit2Feed {
    * @returns {string} content
    */
   _filterCdata(content) {
-    return !content ? '' : content.trim().replace(/\]\]/g, '')
+    if (!content) return ''
+    return content.trim().replace(/\]\]>/g, '')
   }
 
   // public methods
@@ -128,8 +129,8 @@ class Commit2Feed {
           email: commit.commit.author.email
         }
       ],
-      description: this.filterCdata(commit.commit.message),
-      content: this.filterCdata(commit.files.diff),
+      description: this._filterCdata(commit.commit.message),
+      content: this._filterCdata(commit.files.diff),
       date: new Date(commit.commit.author.date)
     }))
     this._feed.items = feedItems
