@@ -70,13 +70,16 @@ class Commit2Feed {
   /**
    * filer cdata
    *
-   * remove CDATA form from content
+   * remove CDATA tag pair from content
    * @param {string} content
    * @returns {string} content
    */
   _filterCdata(content) {
     if (!content) return ''
-    return content.trim().replace(/\]\]>/g, '')
+    return content
+      .trim()
+      .replace(/<\[CDATA\[/g, '')
+      .replace(/\]\]>/g, '')
   }
 
   // public methods
@@ -148,7 +151,7 @@ class Commit2Feed {
     await this.initFeed()
     await this.generateFeedItems()
 
-    return this._feed.atom()
+    return this._feed.atom1()
   }
 }
 

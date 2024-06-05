@@ -61,12 +61,16 @@ pids
 *.pid.lock
 
 # Director binary addons (https://nodejs.org/api/addons.html)
-release/
+# release/
 dist/
 
 # Dependency directories
 node_modules/
-jspm_packages/
+
+# packages
+*-lock.json
+*-lock.yaml
+
 
 # Optional eslint cache
 .eslintcache

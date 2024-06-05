@@ -34,6 +34,7 @@ async function main() {
     core.setOutput(`feed`, rssfeeds)
   } catch (error) {
     core.setFailed(error.message)
+    console.error(error.message, error)
   }
 }
 
@@ -48,7 +49,6 @@ async function debug() {
     console.error(error)
   }
 }
-//
 
 main() // main routin for production release
 // debug() // for bugfix/develop main
