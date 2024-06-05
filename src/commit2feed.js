@@ -65,6 +65,20 @@ class Commit2Feed {
     this._feed = null
   }
 
+  // private methods
+
+  /**
+   * filer cdata
+   *
+   * remove CDATA form from content
+   * @param {string} content
+   * @returns {string} content
+   */
+  _filterCdata(content) {
+    return !content ? '' : content.trim().replace(/\]\]/g, '')
+  }
+
+  // public methods
   /**
    * initializes Feed
    *
@@ -114,8 +128,8 @@ class Commit2Feed {
           email: commit.commit.author.email
         }
       ],
-      description: commit.commit.message.trim(),
-      content: commit.files.diff,
+      description: this.filterCdata(commit.commit.message),
+      content: this.filterCdata(commit.files.diff),
       date: new Date(commit.commit.author.date)
     }))
     this._feed.items = feedItems
@@ -133,7 +147,7 @@ class Commit2Feed {
     await this.initFeed()
     await this.generateFeedItems()
 
-    return this._feed.rss2()
+    return this._feed.atom()
   }
 }
 

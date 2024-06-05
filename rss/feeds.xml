@@ -4,18 +4,37 @@
         <title>atsushifx / commit2feed</title>
         <link>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</link>
         <description>Latest 10 commits for atsushifx / commit2feed</description>
-        <lastBuildDate>Tue, 28 May 2024 08:25:46 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 May 2024 08:48:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/atsushifx/commit2feed</generator>
         <item>
             <title><![CDATA[fix: generator type]]></title>
-            <link>https://github.com/atsushifx/commit2feed/commit/4c4e47958c0083be8429b9001a51a54e174f643b</link>
-            <guid>4c4e47958c0083be8429b9001a51a54e174f643b</guid>
+            <link>https://github.com/atsushifx/commit2feed/commit/85809ef6279e2e6e8fd1f71b694ca99872c7d091</link>
+            <guid>85809ef6279e2e6e8fd1f71b694ca99872c7d091</guid>
             <pubDate>Tue, 28 May 2024 08:25:46 GMT</pubDate>
-            <description><![CDATA[fix: generator type]]></description>
-            <content:encoded><![CDATA[src/commit2feed.js
+            <description><![CDATA[fix: generator type
+update: output as rss2
+use pnpm
+fix: pnpm not use cache]]></description>
+            <content:encoded><![CDATA[.github/workflows/generate_rss.yml
 
-      generator: 'https://github.com/atsushifx/commit2feed',]]></content:encoded>
+
+------
+package-lock.json
+
+
+------
+package.json
+
+    "compile": "pnpm exec babel src --out-dir dist",
+    "release": "pnpm exec ncc build ./dist/main.js -o release -m ",
+    "build": "pnpm compile && pnpm release",
+    "jsdoc": "pnpx jsdoc -c ./jsdoc.config.json",
+    "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" pnpx jest",
+    "lint": "pnpx eslint src/**.js --fix",
+    "format": "pnpx prettier src/**.js --write"
+    "src/*.js": "ppnpx eslint --fix",
+    "**.js*": "ppnpx prettier --write"]]></content:encoded>
             <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
         </item>
         <item>
