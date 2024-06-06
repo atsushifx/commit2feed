@@ -65,6 +65,24 @@ class Commit2Feed {
     this._feed = null
   }
 
+  // private methods
+
+  /**
+   * filer cdata
+   *
+   * remove CDATA tag pair from content
+   * @param {string} content
+   * @returns {string} content
+   */
+  _filterCdata(content) {
+    if (!content) return ''
+    return content
+      .trim()
+      .replace(/<\[CDATA\[/g, '')
+      .replace(/\]\]>/g, '')
+  }
+
+  // public methods
   /**
    * initializes Feed
    *
@@ -114,8 +132,8 @@ class Commit2Feed {
           email: commit.commit.author.email
         }
       ],
-      description: commit.commit.message.trim(),
-      content: commit.files.diff,
+      description: this._filterCdata(commit.commit.message),
+      content: this._filterCdata(commit.files.diff),
       date: new Date(commit.commit.author.date)
     }))
     this._feed.items = feedItems

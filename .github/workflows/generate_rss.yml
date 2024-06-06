@@ -15,17 +15,37 @@ jobs:
         with:
           ref: develop
 
+      - name: Setup Environment
+        run: |
+          # echo "NODE_PATH=${{ github.workspace }}/node_modules" >> $GITHUB_ENV
+          # echo "PATH=${{ github.workspace }}/node_modules/.bin:$PATH" >> $GITHUB_ENV
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Generate Feed
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: install Packages
+        run: |
+          # config
+          pnpm config set store-dir ${{ github.workspace }}/node_modules/.pnpm-store
+          pnpm config set module-dir ${{ github.workspace }}/node_modules
+
+          # pkgs
+          pnpm i --prod
+          pnpm list
+
+      - name: Generate RSS Feed
         id: generate-feed
         uses: atsushifx/commit2feed@develop
         with:
-          user: 'atsushifx'
-          repo: 'commit2feed'
+          user: atsushifx
+          repo: commit2feed
 
       - name: Save Feed
         run: |

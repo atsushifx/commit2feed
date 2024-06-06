@@ -9,8 +9,7 @@
 // Jest's Test module: fetch commit form GitHub repository
 //
 // <<
-
-import {CommitInfo} from '../commitinfo'
+import {CommitInfo} from '../commitinfo.js'
 
 describe('test getRepositoryUrl', () => {
   const commitInfo = new CommitInfo('  atsushifx  ', 'TIL')

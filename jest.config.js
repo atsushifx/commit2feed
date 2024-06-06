@@ -14,9 +14,9 @@
 
 export default {
   rootDir: 'src',
-  //
+
   testMatch: ['**/__tests__/*.js'],
   testEnvironment: 'node',
-  //
+
   transform: {}
 }
