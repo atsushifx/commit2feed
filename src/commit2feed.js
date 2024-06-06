@@ -151,7 +151,7 @@ class Commit2Feed {
     await this.initFeed()
     await this.generateFeedItems()
 
-    return this._feed.atom1()
+    return this._feed.rss2()
   }
 }
 
