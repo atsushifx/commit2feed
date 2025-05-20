@@ -4,9 +4,33 @@
         <title>atsushifx / commit2feed</title>
         <link>https://api.github.com/repos/atsushifx/commit2feed/commits/latest</link>
         <description>Latest 10 commits for atsushifx / commit2feed</description>
-        <lastBuildDate>Tue, 20 May 2025 09:15:08 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 May 2025 09:18:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/atsushifx/commit2feed</generator>
+        <item>
+            <title><![CDATA[deps: update library by vlunnabity]]></title>
+            <link>https://github.com/atsushifx/commit2feed/commit/f27619d69550908c1bce6e81f06355a4a4e4c529</link>
+            <guid>f27619d69550908c1bce6e81f06355a4a4e4c529</guid>
+            <pubDate>Tue, 20 May 2025 09:18:16 GMT</pubDate>
+            <description><![CDATA[deps: update library by vlunnabity]]></description>
+            <content:encoded><![CDATA[package.json
+
+    "feed": "^4.2.2",
+    "undici": "^7.10.0"
+------
+pnpm-lock.yaml
+
+      undici:
+        specifier: ^7.10.0
+        version: 7.10.0
+  undici@7.10.0:
+    resolution: {integrity: sha512-u5otvFBOBZvmdjWLVW+5DAc9Nkq8f24g0O9oY7qw2JVIF1VocIFoyz9JFkuVOS2j41AufeO0xnlweJ2RLT8nGw==}
+    engines: {node: '>=20.18.1'}
+
+  undici@7.10.0: {}
+]]></content:encoded>
+            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
+        </item>
         <item>
             <title><![CDATA[build: update library]]></title>
             <link>https://github.com/atsushifx/commit2feed/commit/f04f4520f1ebbf6572196414fffede2728362bd8</link>
@@ -196,17 +220,6 @@ package.json
     "format": "pnpx prettier src/**.js --write"
     "src/*.js": "ppnpx eslint --fix",
     "**.js*": "ppnpx prettier --write"]]></content:encoded>
-            <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
-        </item>
-        <item>
-            <title><![CDATA[update: output as rss2]]></title>
-            <link>https://github.com/atsushifx/commit2feed/commit/f959b3c78845b6ec0917990bffc19234b453af5a</link>
-            <guid>f959b3c78845b6ec0917990bffc19234b453af5a</guid>
-            <pubDate>Tue, 28 May 2024 08:33:15 GMT</pubDate>
-            <description><![CDATA[update: output as rss2]]></description>
-            <content:encoded><![CDATA[src/commit2feed.js
-
-    return this._feed.rss2()]]></content:encoded>
             <author>atsushifx@gmail.com (Furukawa Atsushi)</author>
         </item>
     </channel>
