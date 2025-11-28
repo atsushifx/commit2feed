@@ -1,6 +1,7 @@
 {
   "name": "@aglabo/commit2feed",
   "_comment": "@(#) : Generate RSS/Atom feed from Git commit history",
+  "private": false,
   "version": "0.1.0",
   "description": "A small utility that converts Git commit logs into RSS/Atom feeds.",
   "author": "atsushifx <https://github.com/atsushifx>",
@@ -34,9 +35,10 @@
     "tsup": "^8.5.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "typescript-eslint": "^8.48.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.0.14"
   },
-
   "scripts": {
     "prepare": "lefthook install",
     "clean": "pnpm rimraf dist",
@@ -50,6 +52,7 @@
     "lint:text": "textlint --config ./configs/textlintrc.yaml --cache --cache-location .cache/textlint-cache/textlintCache ",
     "lint:markdown": "markdownlint-cli2 --config ./configs/.markdownlint.yaml ",
     "lint:secrets": "secretlint --secretlintrc ./configs/secretlint.config.yaml --secretlintignore .gitignore --maskSecrets **/*",
-    "sync:configs": "bash ./scripts/sync-configs.sh"
+    "sync:configs": "bash ./scripts/sync-configs.sh",
+    "sync:configs:all": "pnpm -r sync:configs"
   }
 }
