@@ -8,7 +8,7 @@
 
 ls:
   .dir: kebab-case | regex:^[@#.]?[a-z-_]+$
-  .ts: kebab-case
+  .ts: kebab-case | camelCase | PascalCase
   .type.ts: camelCase | PascalCase
   .class.ts: camelCase | PascalCase
 
@@ -21,7 +21,7 @@ ls:
     tests:
       .*: PascalCase
 
-  # ignore directories
+# ignore directories
 ignore:
   - "**/.git"
   - "**/.github"
