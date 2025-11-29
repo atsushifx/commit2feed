@@ -1,0 +1,13 @@
+# this files is words list for check spell on cSpell
+cjs
+classpath
+cli
+CODEOWNERS
+conv
+dts
+esm
+GWT
+makedirs
+rollup
+tsup
+vite
