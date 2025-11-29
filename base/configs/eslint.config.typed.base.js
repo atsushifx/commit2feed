@@ -13,7 +13,7 @@ import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 
 // -- rules
-import typedRules from './eslint.rules.typed.js';
+import typedRules from './eslint.config.rules.typed.js';
 
 /**
  * Create typed ESLint configuration with customizable options

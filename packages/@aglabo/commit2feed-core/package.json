@@ -1,0 +1,42 @@
+{
+  "name": "cli",
+  "_comment": "@(#) : Generate RSS/Atom feed from Git commit history",
+  "version": "0.1.0",
+  "description": "A small utility that converts Git commit logs into RSS/Atom feeds.",
+  "author": "atsushifx <https://github.com/atsushifx>",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "rss",
+    "atom",
+    "feed",
+    "git",
+    "github-actions",
+    "automation"
+  ],
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "build": "concurrently \"pnpm run build:cjs\" \"pnpm run build:esm\" \"pnpm run build:types\"",
+    "build:esm": "tsup --config ./configs/tsup.config.esm.ts",
+    "clean": "rimraf lib maps module .cache",
+    "format:dprint": "dprint fmt",
+    "check:dprint": "dprint check",
+    "check:types": "tsc --noEmit --incremental",
+    "check:spells": "cspell --config .vscode/cspell.json --cache --cache-location .cache/cspell/cSpellCache",
+    "lint": "pnpm exec eslint --config ./configs/eslint.config.js --cache --cache-location .cache/eslint-cache/esLintCache ",
+    "lint:types": "pnpm exec eslint --config ./configs/eslint.config.typed.js --cache --cache-location .cache/eslint-cache/esLintTypedCache",
+    "lint:all": "concurrently \"pnpm run lint\" \"pnpm run lint:types\"",
+    "test:all": "concurrently \"pnpm run test:develop\" \"pnpm run test:functional\" \"pnpm run test:ci\" \"pnpm run test:e2e\"",
+    "test:develop": "pnpm exec vitest run --config ./configs/vitest.config.unit.ts",
+    "test:functional": "pnpm exec vitest run --config ./configs/vitest.config.functional.ts",
+    "test:ci": "pnpm exec vitest run --config ./configs/vitest.config.integration.ts",
+    "test:e2e": "pnpm exec vitest run --config ./configs/vitest.config.e2e.ts",
+    "sync:configs": "pnpm -w run sync:configs "
+  }
+}

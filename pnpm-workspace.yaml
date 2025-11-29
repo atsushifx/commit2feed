@@ -1,0 +1,8 @@
+# src; pnpm-workspace.yaml
+# @(#) : monorepo defintion with pnpm
+packages:
+  - packages/**
+  - apps/**
+
+onlyBuiltDependencies:
+  - esbuild
