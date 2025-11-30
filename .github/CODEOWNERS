@@ -1,2 +1,12 @@
-# .github/CODEOWNERS
+# src: ./.github/CODEOWNERS
+# @(#) : github settings for CODEOWNERS definition
+#
+# Copyright (c) 2025 atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+## CODEOWNERS settings
+
+# All files
 * @atsushifx
