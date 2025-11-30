@@ -1,9 +1,9 @@
 {
   "name": "@aglabo/commit2feed",
-  "_comment": "@(#) : Generate RSS/Atom feed from Git commit history",
-  "private": false,
+  "_comment": "@(#) : Monorepo for commit2feed - RSS/Atom feed generation utilities from Git commits",
+  "private": true,
   "version": "0.1.0",
-  "description": "A small utility that converts Git commit logs into RSS/Atom feeds.",
+  "description": "Monorepo containing packages for generating RSS/Atom feeds from Git commit history",
   "author": "atsushifx <https://github.com/atsushifx>",
   "license": "MIT",
   "type": "module",

@@ -1,8 +1,9 @@
 {
-  "name": "cli",
-  "_comment": "@(#) : Generate RSS/Atom feed from Git commit history",
+  "name": "@aglabo/commit2feed-core",
+  "_comment": "@(#) : Core module for RSS/Atom feed generation from Git commits",
+  "private": true,
   "version": "0.1.0",
-  "description": "A small utility that converts Git commit logs into RSS/Atom feeds.",
+  "description": "Core functionality for generating RSS/Atom feeds from Git commit history",
   "author": "atsushifx <https://github.com/atsushifx>",
   "license": "MIT",
   "type": "module",
@@ -11,8 +12,9 @@
     "atom",
     "feed",
     "git",
-    "github-actions",
-    "automation"
+    "core",
+    "library",
+    "commit2feed"
   ],
   "packageManager": "pnpm@10.24.0",
   "engines": {
